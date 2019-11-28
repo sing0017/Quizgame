@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { QuizService } from '../shared/quiz.service';
 import {Participant} from '../register/Participant';
 import {Question} from '../shared/Question';
- import {RegisterComponent} from '../register/register.component';
+import {RegisterComponent} from '../register/register.component';
 import { AngularFirestoreCollection, AngularFirestore } from 'angularfire2/firestore';
 import{map} from 'rxjs/operators';
 import { DragndropquizComponent } from '../dragndropquiz/dragndropquiz.component';
