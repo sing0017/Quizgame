@@ -40,7 +40,7 @@ export class QuizService {
         .then( 
             authState => {
                 console.log("signup-then", authState);  
-                this.loggedIn.next(true);   
+                //this.loggedIn.next(true);   
                 this.loggedInUser = authState.user.uid;
                 this.loggedInUsername = authState.user.email;  
                 this.loggedInUserdname = authState.user.displayName;                             
