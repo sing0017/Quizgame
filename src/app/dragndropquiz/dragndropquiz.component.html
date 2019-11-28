@@ -1,0 +1,80 @@
+<app-navbar></app-navbar>
+<div class="modal-body" >
+    <h1>{{correct}}</h1>
+</div>
+<div class="example-container">
+        <h2>Available cars</h2>
+        <ng-container  *ngFor="let options of drag | async "> 
+        <div
+          id="cars"
+          cdkDropList
+          [cdkDropListData]="options.data.Option"
+          cdkDropListConnectedTo="even"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)"
+          [cdkDropListEnterPredicate]="noReturnPredicate">
+          <div
+            class="example-box"
+            *ngFor="let number of options.data.Option "
+            [cdkDragData]="number"
+            cdkDrag>  
+                  {{number }}
+             </div>
+        </div>
+        </ng-container>
+      </div>
+      <div class="example-container">
+        <h2>Available numbers2</h2>
+        <ng-container  *ngFor="let optins of drag1 | async "> 
+        <div
+          id="cars2"
+          cdkDropList
+          [cdkDropListData]="optins.data.Option"
+          cdkDropListConnectedTo="even1"
+          class="example-list"
+          (cdkDropListDropped)="drop1($event)"
+          [cdkDropListEnterPredicate]="noReturnPredicate">
+          <div
+            class="example-box"
+            *ngFor="let number of optins.data.Option"
+            [cdkDragData]="number"
+            cdkDrag>{{number}}</div>
+        </div>
+        </ng-container>
+      </div>
+      
+      
+      <div class="example-container">
+        <h2>Name the car brand</h2>
+        <div
+          id="even"
+          cdkDropList
+          cdk-drag-animating
+          [cdkDropListData]="even"
+          cdkDropListConnectedTo="cars"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)"
+          >
+          <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/volvo.webp?alt=media&token=16583598-9443-4964-b9ad-127c975e093a" style="height: 200px; width: 400px;">
+          
+      </div>
+      <div class="example-container">
+        <h2>Name the car brand</h2>
+        <div
+          id="even1"
+          cdkDropList
+          [cdkDropListData]="even1"
+          cdkDropListConnectedTo="cars2"
+          class="example-list"
+          (cdkDropListDropped)="drop1($event)"
+          >
+          <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/hummer.jpg?alt=media&token=91bb5f34-07aa-4376-9dcc-fe5c4bd2206e" style="height: 200px; width: 200;">
+        </div>
+        <div class="modal-body" >
+                   <h1>Your current Score:</h1><tr><h1>{{correctAnswerCountfordrag100}}</h1>
+          </div>
+        <button (click)="submit()">Submit you score</button>
+        <button (click)="restart()">Restart</button>
+     
+        
+         

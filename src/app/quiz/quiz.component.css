@@ -1,0 +1,16 @@
+li:hover {
+    background-color: burlywood;
+  }
+
+li {   
+    color: black;   
+}
+
+li:active {
+    color: blue;
+}
+
+li[tabindex]:focus {
+    color:blue;
+    outline: none;
+}
