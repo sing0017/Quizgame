@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuizService } from '../shared/quiz.service';
 import {Participant} from '../register/Participant';
-import {Question} from '../shared/Question';
+import {Question} from '../shared/question';
 import {RegisterComponent} from '../register/register.component';
 import { AngularFirestoreCollection, AngularFirestore } from 'angularfire2/firestore';
 import{map} from 'rxjs/operators';
