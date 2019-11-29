@@ -63,6 +63,24 @@ export class QuizService {
                 }           
               });           
           } 
+          login(username, password: string = '123456'){       
+            if(username !== '' && password !== ''){                 
+                return this.afAuth.auth.signInWithEmailAndPassword(username,password)
+                    .then(authState => {          
+                        console.log("Login-then",authState);    
+                        this.loggedIn.next(true);  
+                        this.loggedInUser=authState.user.uid; 
+                        this.loggedInUsername = authState.user.email;               
+                        this.router.navigate(['/']);                      
+                    })
+                    .catch(
+                        error => {                    
+                            this.router.navigate(['login/' + error.message]);
+                            console.log(error);                
+                        }                                          
+                    );    
+            }   
+          }
           SignOut() {
             this.loggedIn.next(false);      
             this.afAuth.auth.signOut();     

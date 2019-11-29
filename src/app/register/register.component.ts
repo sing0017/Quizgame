@@ -52,5 +52,10 @@ onSignup(){
   var result = this.quizService.signup(
       this.form.controls['Name'].value); 
 }
+login(){
+  var result = this.quizService.login(
+    this.form.controls['Name'].value);
+   
+}
   
   }
