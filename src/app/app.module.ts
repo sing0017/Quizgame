@@ -19,6 +19,7 @@ import { appRoutes } from './routes';
 import { AuthGuard } from './auth/auth.guard';
 import { DragndropquizComponent } from './dragndropquiz/dragndropquiz.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ResultComponent } from './result/result.component';
  
 
 
@@ -40,6 +41,7 @@ var config= {
     NavbarComponent,
     QuizComponent,
     DragndropquizComponent,
+    ResultComponent
       
   ],
   imports: [
@@ -55,7 +57,7 @@ var config= {
     DragDropModule
 
   ],
-  providers: [QuizService,AuthGuard, DragndropquizComponent ],
+  providers: [QuizService,AuthGuard, DragndropquizComponent , ResultComponent , RegisterComponent, QuizComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

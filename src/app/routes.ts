@@ -3,11 +3,14 @@ import { RegisterComponent } from './register/register.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { AuthGuard } from './auth/auth.guard';
 import {DragndropquizComponent} from './dragndropquiz/dragndropquiz.component';
+import { ResultComponent } from './result/result.component';
 
 export const appRoutes : Routes =[
     {path:'register',component:RegisterComponent},
     {path:'quiz',component:QuizComponent, canActivate : [AuthGuard]  },
-      {path:'',component:DragndropquizComponent , canActivate : [AuthGuard]  }
+      {path:'',component:DragndropquizComponent , canActivate : [AuthGuard]  },
+      {path:'result',component:ResultComponent, canActivate : [AuthGuard]  },
+
 
       
 ];

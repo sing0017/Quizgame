@@ -7,7 +7,7 @@ import {RegisterComponent} from '../register/register.component';
 import { AngularFirestoreCollection, AngularFirestore } from 'angularfire2/firestore';
 import{map} from 'rxjs/operators';
 import { DragndropquizComponent } from '../dragndropquiz/dragndropquiz.component';
-
+ 
 interface User{
   Name : string;
   email: string;
@@ -19,7 +19,7 @@ interface User{
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.css'] ,
-  providers: [RegisterComponent , DragndropquizComponent]
+  providers: [RegisterComponent , DragndropquizComponent  ]
 })
 
 export class QuizComponent implements OnInit {
@@ -32,7 +32,7 @@ export class QuizComponent implements OnInit {
    questions: any;
    participants: any;
      correctAnswerCount: number = 0;
-   qnProgress: number;
+   qnProgress: number = 1;
    
    optionss: any;
    usersCol: AngularFirestoreCollection<User>;
@@ -50,17 +50,17 @@ export class QuizComponent implements OnInit {
 
   
   ngOnInit(){
- 
-     this.quizService.qnProgress = parseInt(localStorage.getItem('qnProgress'));
-    this.questionsCol = this.afs.collection('Question');
+  this.correctAnswerCount;
+  this.correct;
+     this.questionsCol = this.afs.collection('Question');
     this.questions = this.questionsCol.snapshotChanges()
     .pipe(
         map(actions => {
             return actions.map(a => {
-                const data = a.payload.doc.data() as Question;
+                 const data = a.payload.doc.data() as Question;
                 const id = a.payload.doc.id;
-                return{id, data};
-
+               
+                  return{id, data};
             });
         })
     );   
@@ -100,31 +100,11 @@ export class QuizComponent implements OnInit {
   .doc(this.quizService.loggedInUser)
   .collection("clients")
   .add({
-      Score: this.correctAnswerCount,
+      Score: this.quizService.correctAnswerCount,
       Scorefordrag: this.dragndropcomponent.correctAnswerCountfordrag
    });    
 }
  
-  Answer( qID , choice) { 
-    if (qID ==  choice) { 
-     this.correctAnswerCount++;
-     if (this.correctAnswerCount >= 5) {
-      this.correct = 'Bravo';
-    }
-    else if (this.correctAnswerCount >= 3) {
-      this.correct = 'Not Bad';
-
-    }
-    else if (this.correctAnswerCount >= 1) {
-      this.correct = 'Try once Again';
-      console.log(this.correct);
-    }
-     console.log('correct' + this.correctAnswerCount);
-     }
-    else{
-      console.log('incorrect' );
-    }
-  }
-
+  
 
 }

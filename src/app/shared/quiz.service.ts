@@ -17,17 +17,18 @@ export class QuizService {
 
  
   questions: Observable<Question[]>;
+  quizcomponent: any;
 
   constructor( private router:Router,
     private afAuth: AngularFireAuth , 
     private http: HttpClient , 
     private afs: AngularFirestore){
   }
-  
+  correct: string = '';
   qns: any[];
   seconds: number;
   timer;
-  qnProgress: number;
+  qnProgress: number = 1;
   correctAnswerCount: number = 0;
   password: string = '123456';
 
@@ -89,5 +90,42 @@ export class QuizService {
             this.loggedInUser=null;    
               this.router.navigate(['/register']);
           }
+
+          Answer( qID , choice) { 
+ 
+            if (choice != 0) {
+              
+            if (qID ==  choice) { 
+              this.correctAnswerCount++;
+              
+              if (this.correctAnswerCount >= 5) {
+               this.correct = 'Bravo';
+               console.log(this.correct);
+             }
+             else if (this.correctAnswerCount >= 3) {
+               this.correct = 'Not Bad';
+               console.log(this.correct);
+             }
+             else if (this.correctAnswerCount >= 1) {
+               this.correct = 'Try once Again';
+               console.log(this.correct);
+             }
+              console.log('correct' + this.correctAnswerCount);
+        
+              }
+             
+              this.qnProgress++;
+              if (this.qnProgress == 6) {
+                this.router.navigate(['result']);
+                  console.log('correctdd' + this.correctAnswerCount)
+              }
+            }
+            else{
+              console.log('incorrect' );
+            }
+          }
+
+          
+        
    
 }
