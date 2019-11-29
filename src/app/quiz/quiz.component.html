@@ -7,9 +7,11 @@
              
  
           <div class="card-action">
+
                <ul class="collection answer">
                 <ng-container  *ngFor="let options of questions | async "> 
-                    <ng-container  *ngIf="options.data.QnID==quizService.qnProgress"> 
+                    <ng-container  *ngIf="options.data.QnID==quizService.qnProgress">
+                      <img src="{{options.data.ImageURL}}" style="height: 400px; width: 600px;" > 
                          <div class="card blue-grey darken-1"   >
                                 <div class="card-content white-text">
                                 <p>{{options.data.Qn }}</p>
