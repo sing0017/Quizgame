@@ -11,8 +11,7 @@
                <ul class="collection answer">
                 <ng-container  *ngFor="let options of questions | async "> 
                     <ng-container  *ngIf="options.data.QnID==quizService.qnProgress">
-                      <img src="{{options.data.ImageURL}}" style="height: 400px; width: 600px;" > 
-                         <div class="card blue-grey darken-1"   >
+                          <div class="card blue-grey darken-1"   >
                                 <div class="card-content white-text">
                                 <p>{{options.data.Qn }}</p>
                              </div>  
@@ -20,9 +19,7 @@
                             <div class="card-action">
                                 <ul class="collection answer"> 
                     <ng-container *ngFor="let option of options.data.Option  ; let i = index" >  
-                   <li tabindex="1" class="collection-item" (click)="quizService.Answer(options.data.Answer,i)" > 
-                     {{option}}
-                  </li>
+                    <img src="{{option}}" (click)="quizService.Answer(options.data.Answer,i)" style="height: 400px; width: 400px;">
                 </ng-container>
                 </ul>
                 </div>   
@@ -33,7 +30,14 @@
 
  
 
-            <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit</button>
+            <!--
+
+             <li tabindex="1" class="collection-item" (click)="quizService.Answer(options.data.Answer,i)" > 
+                     {{option}}
+                  </li>
+
+
+              <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit</button>
             <div id="myModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
               
