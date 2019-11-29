@@ -14,5 +14,5 @@ export class AppComponent {
   }
   ngOnInit(){
     this.quizService.getCurrentUser();
-
-   }}
+   }
+  }

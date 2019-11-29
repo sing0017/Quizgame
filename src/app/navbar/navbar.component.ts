@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
 
  
   DragnDrop(){
-    this.router.navigate(['/drag']);
+    this.router.navigate(['']);
   }
   Normal(){
     this.router.navigate(['/quiz']);

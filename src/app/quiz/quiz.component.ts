@@ -50,7 +50,8 @@ export class QuizComponent implements OnInit {
 
   
   ngOnInit(){
-    this.quizService.qnProgress = parseInt(localStorage.getItem('qnProgress'));
+ 
+     this.quizService.qnProgress = parseInt(localStorage.getItem('qnProgress'));
     this.questionsCol = this.afs.collection('Question');
     this.questions = this.questionsCol.snapshotChanges()
     .pipe(

@@ -2,7 +2,8 @@
 <div class="modal-body" >
     <h1>{{correct}}</h1>
 </div>
-<div class="card-action">
+
+<div class="card-action1">
   <div class="example-container">
     <h2>Name the car brand</h2>
     <div
@@ -39,6 +40,7 @@
   </ng-container>
 </div>
 </div>
+</div>
       
       <div class="card-action">
         <div class="example-container">
@@ -53,7 +55,7 @@
             >
             <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/hummer.jpg?alt=media&token=91bb5f34-07aa-4376-9dcc-fe5c4bd2206e" style="height: 200px; width: 200;">
           </div>
-          <div class="example-container1">
+          <div class="example-container">
             <h2>Available numbers2</h2>
             <ng-container  *ngFor="let optins of drag1 | async "> 
             <div
@@ -72,9 +74,9 @@
             </div>
             </ng-container>
           </div>
-         
+        </div>
       </div>
-      </div>
+        
        <div class="card-action">
         <div class="modal-body" >
           <h1>Your current Score:</h1><tr><h1>{{correctAnswerCountfordrag100}}</h1>
