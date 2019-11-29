@@ -40,15 +40,34 @@ export class QuizService {
         .then( 
             authState => {
                 console.log("signup-then", authState);  
-                //this.loggedIn.next(true);   
+                this.loggedIn.next(true);   
                 this.loggedInUser = authState.user.uid;
                 this.loggedInUsername = authState.user.email;  
                 this.loggedInUserdname = authState.user.displayName;                             
-                this.router.navigate(['/drag']);
+                this.router.navigate(['']);
                 console.log(authState.user.displayName);
             }
         )
           }
- 
+          getCurrentUser(){       
+            return this.afAuth.authState.subscribe(authState => {
+                if(authState){
+                    this.loggedIn.next(true);   
+                    this.loggedInUser=authState.uid;    
+                    this.loggedInUsername = authState.email;         
+                    this.router.navigate(['/']);                     
+                    console.log("logged in as " + authState.uid);
+                } 
+                else{
+                  this.router.navigate(['register']);                      
+                }           
+              });           
+          } 
+          SignOut() {
+            this.loggedIn.next(false);      
+            this.afAuth.auth.signOut();     
+            this.loggedInUser=null;    
+              this.router.navigate(['/register']);
+          }
    
 }

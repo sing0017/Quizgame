@@ -87,9 +87,8 @@ export class QuizComponent implements OnInit {
  }
 
  restart() {
-  clearInterval(this.correctAnswerCount);
-  this.router.navigate(['/drag']);
- }
+  window.location.reload(true);
+   }
 
  close(){
   localStorage.setItem('correctAnswerCount', "0");

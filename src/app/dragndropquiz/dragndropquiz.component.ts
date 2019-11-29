@@ -121,8 +121,8 @@ export class DragndropquizComponent implements OnInit {
  
   
  restart() {
-  clearInterval(this.correctAnswerCountfordrag);
-  this.router.navigate(['/quiz']);
+  window.location.reload(true);
+  
 }
  submit(){ 
   this.afs.collection('users')

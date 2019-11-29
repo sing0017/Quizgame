@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { QuizService } from './shared/quiz.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AngularFinalProject';
-}
+  isLoggedIn: Observable<boolean>;
+  constructor(private quizService: QuizService){
+
+  }
+  ngOnInit(){
+    this.quizService.getCurrentUser();
+    this.quizService.loggedInUser;
+   }}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../shared/quiz.service';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-navbar',
@@ -9,14 +10,12 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private quizService : QuizService,private router : Router ) { }
+  constructor(private quizService : QuizService,private router : Router , private afAuth: AngularFireAuth ) { }
 
   ngOnInit() {
   }
 
-  SignOut() {
-      this.router.navigate(['/register']);
-  }
+ 
   DragnDrop(){
     this.router.navigate(['/drag']);
   }

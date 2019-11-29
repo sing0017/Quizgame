@@ -6,8 +6,8 @@ import {DragndropquizComponent} from './dragndropquiz/dragndropquiz.component';
 
 export const appRoutes : Routes =[
     {path:'register',component:RegisterComponent},
-    {path:'quiz',component:QuizComponent  },
-     {path:'',redirectTo:'/register',pathMatch:'full'},
-     {path:'drag',component:DragndropquizComponent  }
+    {path:'quiz',component:QuizComponent, canActivate : [AuthGuard]  },
+      {path:'',component:DragndropquizComponent , canActivate : [AuthGuard]  }
 
+      
 ];
