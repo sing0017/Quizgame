@@ -37,7 +37,7 @@ export class DragndropquizComponent implements OnInit {
   ngOnInit() {
     this.quizService.getCurrentUser();
     this.quizService.loggedInUser;
-    
+
     this.dragCol = this.afs.collection('Drag');
     this.drag = this.dragCol.snapshotChanges()
     .pipe(
@@ -124,7 +124,7 @@ export class DragndropquizComponent implements OnInit {
  
   
  restart() {
-  window.location.reload(true);
+  location.reload(true);
   
 }
  submit(){ 
