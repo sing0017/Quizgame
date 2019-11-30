@@ -20,6 +20,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { DragndropquizComponent } from './dragndropquiz/dragndropquiz.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ResultComponent } from './result/result.component';
+import { DisplaypageComponent } from './displaypage/displaypage.component';
  
 
 
@@ -41,7 +42,8 @@ var config= {
     NavbarComponent,
     QuizComponent,
     DragndropquizComponent,
-    ResultComponent
+    ResultComponent,
+    DisplaypageComponent
       
   ],
   imports: [

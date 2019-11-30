@@ -13,6 +13,8 @@ export class QuizService {
   loggedInUser;
   loggedInUsername: string;
   loggedInUserdname: string = 'harman';
+  numnber:Number = 0;
+
 
 
  
@@ -36,45 +38,54 @@ export class QuizService {
     return this.loggedIn.asObservable();        
   }  
 
-  signup(Name: string ,  password: string = '123456' ){ 
+  //For signin the user
+  signup(Name: string ,  password: string = '123456' )
+  { 
     return this.afAuth.auth.createUserWithEmailAndPassword(Name, password)    
         .then( 
             authState => {
                 console.log("signup-then", authState);  
-                this.loggedIn.next(true);   
+                this.loggedIn.next(true); 
+                this.numnber = 1;   
                 this.loggedInUser = authState.user.uid;
                 this.loggedInUsername = authState.user.email;  
                 this.loggedInUserdname = authState.user.displayName;                             
-                this.router.navigate(['']);
+                this.router.navigate(['/drag']);
                 console.log(authState.user.displayName);
             }
         )
           }
-          getCurrentUser(){       
+
+//---get the current state of user and put it on ngonit on app component 
+//so that whenever we refresh the page user dont lost it state and redirected to login page ----
+  getCurrentUser()
+  {       
             return this.afAuth.authState.subscribe(authState => {
                 if(authState){
-                    this.loggedIn.next(true);   
+                    this.loggedIn.next(true); 
+                    this.numnber = 1;   
                     this.loggedInUser=authState.uid;    
                     this.loggedInUsername = authState.email;         
                     this.router.navigate(['/']);                     
                     console.log("logged in as " + authState.uid);
                 } 
                 else{
-                  this.router.navigate(['register']);                      
+                  this.router.navigate(['']);                      
                 }           
               });           
           } 
         
-       
-          login(username, password: string = '123456'){       
+  //For login the user if he/she already a user   
+  login(username, password: string = '123456'){       
             if(username !== '' && password !== ''){                 
                 return this.afAuth.auth.signInWithEmailAndPassword(username,password)
                     .then(authState => {          
                         console.log("Login-then",authState);    
-                        this.loggedIn.next(true);  
+                        this.loggedIn.next(true); 
+                        this.numnber = 1; 
                         this.loggedInUser=authState.user.uid; 
                         this.loggedInUsername = authState.user.email;               
-                        this.router.navigate(['/']);                      
+                        this.router.navigate(['drag']);                      
                     })
                     .catch(
                         error => {                    
@@ -84,29 +95,39 @@ export class QuizService {
                     );    
             }   
           }
-          SignOut() {
+  //---for signout and make the loggedin state false so that when user try to reload the page it dont navigate back to
+  //the front page cuase of logged in state true----  
+  SignOut() {
             this.loggedIn.next(false);      
-            this.afAuth.auth.signOut();     
+            this.afAuth.auth.signOut();
+            this.numnber = 0;      
             this.loggedInUser=null;    
-              this.router.navigate(['/register']);
+              this.router.navigate(['/']);
+              location.reload(true);
           }
-
-          Answer( qID , choice) { 
+//----this method for getting the answer on the basis of user selected choice and then on the basis of correct answer
+//run the else if statement to display the result and finally navigate to result page to see the result.---
+  Answer( qID , choice) 
+  { 
  
-            if (choice != 0) {
+     if (choice != -1) {
               
-            if (qID ==  choice) { 
-              this.correctAnswerCount++;
+          if (qID ==  choice)
+                { 
+                 this.correctAnswerCount++;
               
-              if (this.correctAnswerCount >= 5) {
+              if (this.correctAnswerCount >= 5)
+               {
                this.correct = 'Bravo';
                console.log(this.correct);
-             }
-             else if (this.correctAnswerCount >= 3) {
+               }
+             else if (this.correctAnswerCount >= 3) 
+             {
                this.correct = 'Not Bad';
                console.log(this.correct);
              }
-             else if (this.correctAnswerCount >= 1) {
+             else if (this.correctAnswerCount >= 1)
+              {
                this.correct = 'Try once Again';
                console.log(this.correct);
              }

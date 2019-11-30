@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+
+<h1>displaypage works!</h1>
+<ul>
+    <li>
+            <ng-container *ngIf="quizservice.numnber==0;">
+             <a  routerLink="/register"  routerLinkActive="active">Login</a>
+            </ng-container>
+
+        <ng-container *ngIf="quizservice.numnber==1;">
+        <a  routerLink="/quiz"  routerLinkActive="active">Normal Quiz</a>
+        <a  routerLink="/drag"  routerLinkActive="active">DragnDrop Quiz</a>
+         </ng-container>
+
+    </li>
+</ul>

@@ -17,10 +17,13 @@ export class NavbarComponent implements OnInit {
 
  
   DragnDrop(){
-    this.router.navigate(['']);
+    this.router.navigate(['/drag']);
   }
   Normal(){
     this.router.navigate(['/quiz']);
+  }
+  Homepage(){
+    this.router.navigate(['']);
   }
 
 }
