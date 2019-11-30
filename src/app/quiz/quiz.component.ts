@@ -105,6 +105,5 @@ export class QuizComponent implements OnInit {
    });    
 }
  
-  
-
+ 
 }

@@ -39,7 +39,7 @@ export class QuizService {
   }  
 
   //For signin the user
-  signup(Name: string ,  password: string = '123456' )
+  signup(Name: string ,   password: string = '123456' )
   { 
     return this.afAuth.auth.createUserWithEmailAndPassword(Name, password)    
         .then( 
@@ -51,6 +51,7 @@ export class QuizService {
                 this.loggedInUsername = authState.user.email;  
                 this.loggedInUserdname = authState.user.displayName;                             
                 this.router.navigate(['/drag']);
+                location.reload(true);                 
                 console.log(authState.user.displayName);
             }
         )
@@ -76,7 +77,7 @@ export class QuizService {
           } 
         
   //For login the user if he/she already a user   
-  login(username, password: string = '123456'){       
+  login(username  , password: string = '123456'){       
             if(username !== '' && password !== ''){                 
                 return this.afAuth.auth.signInWithEmailAndPassword(username,password)
                     .then(authState => {          
@@ -85,7 +86,8 @@ export class QuizService {
                         this.numnber = 1; 
                         this.loggedInUser=authState.user.uid; 
                         this.loggedInUsername = authState.user.email;               
-                        this.router.navigate(['drag']);                      
+                        this.router.navigate(['']);   
+                        location.reload(true);                 
                     })
                     .catch(
                         error => {                    

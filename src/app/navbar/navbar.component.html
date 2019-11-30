@@ -2,11 +2,23 @@
     <h1 class="modal-title">{{quizService.loggedInUsername}}</h1>
 
        <ul class=" mainnav " >
+          <ng-container *ngIf="quizService.numnber==0;">
         <li>
           <a  (click)="quizService.SignOut()">Signout</a>        
           <a  routerLink=""  routerLinkActive="active">Homepage</a>
-
+          <a    routerLinkActive="active">Aboutpage</a>
 
         </li>
+          </ng-container>
+          <ng-container *ngIf="quizService.numnber==1;">
+              <li>
+                  <a  (click)="quizService.SignOut()">Signout</a>    
+                  <a  routerLink=""  routerLinkActive="active">Homepage</a>
+                 <a  routerLink="/quiz"  routerLinkActive="active">Quiz</a>
+                 <a  routerLink="drag"  routerLinkActive="active">Drag</a>
+                 <a    routerLinkActive="active">Aboutpage</a>
+
+              </li>
+                </ng-container>
       </ul>
    </nav>
