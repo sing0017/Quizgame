@@ -10,10 +10,13 @@ import {Question} from './question';
 export class QuizService {
   
   private loggedIn = new BehaviorSubject<boolean>(false);
+    resstart = new BehaviorSubject<boolean>(false);
+
   loggedInUser;
   loggedInUsername: string;
   loggedInUserdname: string = 'harman';
   numnber:Number = 0;
+  number2: number = 0;
 
 
 
@@ -27,6 +30,8 @@ export class QuizService {
     private afs: AngularFirestore){
   }
   correct: string = '';
+  correct1: string = '';
+
   qns: any[];
   seconds: number;
   timer;
@@ -35,7 +40,8 @@ export class QuizService {
   password: string = '123456';
 
   get isLoggedIn(){
-    return this.loggedIn.asObservable();        
+    return this.loggedIn.asObservable();  
+        
   }  
 
   //For signin the user
@@ -55,6 +61,12 @@ export class QuizService {
                 console.log(authState.user.displayName);
             }
         )
+        .catch(
+          error => {
+              var errorMessage = error.message;
+              console.log(error);                
+          }
+      ); 
           }
 
 //---get the current state of user and put it on ngonit on app component 
@@ -69,12 +81,31 @@ export class QuizService {
                     this.loggedInUsername = authState.email;         
                     this.router.navigate(['/']);                     
                     console.log("logged in as " + authState.uid);
+                   
                 } 
                 else{
                   this.router.navigate(['']);                      
                 }           
               });           
           } 
+         
+          getCurrentUser1()
+          {       
+                    return this.afAuth.authState.subscribe(authState => {
+                        if(authState){
+                            this.loggedIn.next(true); 
+                            this.numnber = 1;   
+                            this.loggedInUser=authState.uid;    
+                            this.loggedInUsername = authState.email;         
+                            this.router.navigate(['/quiz']);                     
+                            console.log("logged in as " + authState.uid);
+                          
+                        } 
+                        else{
+                          this.router.navigate(['quiz']);                      
+                        }           
+                      });           
+                  } 
         
   //For login the user if he/she already a user   
   login(username  , password: string = '123456'){       
@@ -117,6 +148,7 @@ export class QuizService {
           if (qID ==  choice)
                 { 
                  this.correctAnswerCount++;
+                 this.correct1 = 'Correct';
               
               if (this.correctAnswerCount >= 5)
                {
@@ -136,13 +168,18 @@ export class QuizService {
               console.log('correct' + this.correctAnswerCount);
         
               }
-             
+              else if(qID !=  choice)
+              {
+                this.correct1 = 'InCorrect';
+              }
               this.qnProgress++;
               if (this.qnProgress == 6) {
-                this.router.navigate(['result']);
-                  console.log('correctdd' + this.correctAnswerCount)
+
+                  this.router.navigate(['result']);
               }
+             
             }
+         
             else{
               console.log('incorrect' );
             }

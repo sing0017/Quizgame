@@ -1,6 +1,12 @@
 <app-navbar></app-navbar>
 <div class="modal-body" >
-    <h1>{{correct}}</h1>
+     <ng-container  *ngIf="correct=='InCorrect'"> 
+     <img src="https://craigmcneil.me/wp-content/uploads/2017/02/wrong.jpg" style="height: 100px; width: 100px;">
+    </ng-container>
+     <br>
+     <ng-container  *ngIf="correct=='Correct'"> 
+      <img src="https://media.istockphoto.com/vectors/grunge-green-correct-square-rubber-seal-stamp-on-white-background-vector-id959944312" style="height: 100px; width: 100px;">
+     </ng-container>
 </div>
 
 <div class="card-action1">

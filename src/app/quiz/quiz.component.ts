@@ -7,6 +7,7 @@ import {RegisterComponent} from '../register/register.component';
 import { AngularFirestoreCollection, AngularFirestore } from 'angularfire2/firestore';
 import{map} from 'rxjs/operators';
 import { DragndropquizComponent } from '../dragndropquiz/dragndropquiz.component';
+import { Location } from '@angular/common';
  
 interface User{
   Name : string;
@@ -40,18 +41,20 @@ export class QuizComponent implements OnInit {
    userCol: AngularFirestoreCollection<User>;
    use: any;
    correct: string = '';
+   number2: number = 0;
 
    
   constructor(private router: Router, 
     private registercomponent : RegisterComponent,
     private quizService: QuizService,
     private afs: AngularFirestore ,
-    private dragndropcomponent : DragndropquizComponent) { }
+    private dragndropcomponent : DragndropquizComponent,
+    public _location: Location) { }
 
   
   ngOnInit(){
   this.correctAnswerCount;
-  this.correct;
+   this.correct;
      this.questionsCol = this.afs.collection('Question');
     this.questions = this.questionsCol.snapshotChanges()
     .pipe(
@@ -59,7 +62,6 @@ export class QuizComponent implements OnInit {
             return actions.map(a => {
                  const data = a.payload.doc.data() as Question;
                 const id = a.payload.doc.id;
-               
                   return{id, data};
             });
         })
@@ -88,8 +90,9 @@ export class QuizComponent implements OnInit {
  }
 
  restart() {
-  window.location.reload(true);
-   }
+  location.reload(true);
+    }
+ 
 
  close(){
   localStorage.setItem('correctAnswerCount', "0");
@@ -100,9 +103,8 @@ export class QuizComponent implements OnInit {
   .doc(this.quizService.loggedInUser)
   .collection("clients")
   .add({
-      Score: this.quizService.correctAnswerCount,
-      Scorefordrag: this.dragndropcomponent.correctAnswerCountfordrag
-   });    
+      Score: this.quizService.correctAnswerCount
+    });    
 }
  
  

@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DisplaypageComponent  {
   form: FormGroup;
-  invalidLoginMessage : string ;
+  invalidLoginMessage;
 
   constructor(fb: FormBuilder, private quizservice : QuizService , private resistercomponent : RegisterComponent , private _route:ActivatedRoute)
    {
@@ -22,7 +22,8 @@ export class DisplaypageComponent  {
   
    ngOnInit(){
     this._route.params.subscribe(params => {
-      this.invalidLoginMessage = params["invalidLoginMessage"]
+      this.invalidLoginMessage = params["invalidLoginMessage"];
+      console.log(this.invalidLoginMessage);
   });
    }
   onSignup(){

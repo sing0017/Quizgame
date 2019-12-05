@@ -1,4 +1,5 @@
 <app-navbar></app-navbar>
+
 <div class="row" *ngIf="this.quizService.qnProgress != 10">
         <div class="col s8 offset-s2">
           <div class="progress">
@@ -11,6 +12,15 @@
                <ul class="collection answer">
                 <ng-container  *ngFor="let options of questions | async "> 
                     <ng-container  *ngIf="options.data.QnID==quizService.qnProgress">
+                        <div class="modal-body" >
+                            <ng-container  *ngIf="quizService.correct1=='InCorrect'"> 
+                            <img src="https://craigmcneil.me/wp-content/uploads/2017/02/wrong.jpg" style="height: 100px; width: 100px;">
+                           </ng-container>
+                            <br>
+                            <ng-container  *ngIf="quizService.correct1=='Correct'"> 
+                             <img src="https://media.istockphoto.com/vectors/grunge-green-correct-square-rubber-seal-stamp-on-white-background-vector-id959944312" style="height: 100px; width: 100px;">
+                            </ng-container>
+                          </div>
                           <div class="card blue-grey darken-1"   >
                                 <div class="card-content white-text">
                                 <p>{{options.data.Qn }}</p>
@@ -19,7 +29,7 @@
                             <div class="card-action">
                                 <ul class="collection answer"> 
                     <ng-container *ngFor="let option of options.data.Option  ; let i = index" >  
-                    <img src="{{option}}" (click)="quizService.Answer(options.data.Answer,i)" style="height: 400px; width: 400px;">
+                    <img  src="{{option}}" (click)="quizService.Answer(options.data.Answer,i)" style="height: 400px; width: 400px;">
                 </ng-container>
                 </ul>
                 </div>   

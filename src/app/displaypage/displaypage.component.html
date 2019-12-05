@@ -3,13 +3,10 @@
 <h1>displaypage works!</h1>
 <ul>
     <li>
-             
-
         <ng-container *ngIf="quizservice.numnber==1;">
         <a  routerLink="/quiz"  routerLinkActive="active">Normal Quiz</a>
         <a  routerLink="/drag"  routerLinkActive="active">DragnDrop Quiz</a>
          </ng-container>
-
     </li>
 </ul>
 
@@ -46,7 +43,10 @@
                         <div class="form-group">
                                 <label for="Name">Username</label>
                                 <input  type="text" class="form-control" formControlName="Name"> 
-                               
+                                <div *ngIf="form.controls.Name.touched && 
+                                !form.controls.Name.valid" class="alert alert-danger">
+                                Username is Required
+                            </div>
                               </div>
        
                        <button [disabled]="!form.valid" class="btn btn-info" type="submit">Log in <i class="fas fa-sign-in ml-1"></i></button>
@@ -71,9 +71,13 @@
                                     <div class="form-group">
                                             <label for="Name">Username</label>
                                             <input  type="text" class="form-control" formControlName="Name"> 
-                                       
+                                            <div *ngIf="form.controls.Name.touched && 
+                                            !form.controls.Name.valid" class="alert alert-danger">
+                                            Username is Required
+                                        </div>
+                                      
                                           </div>
-          
+                                         
                            <button class="btn btn-info" type="submit">Sign up <i class="fas fa-sign-in ml-1"></i></button>
                              </form>
                       </div>
@@ -97,5 +101,5 @@
       
       <div class="text-center">
         <a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">play games</a>
-      </div>
+       </div>
     </ng-container>

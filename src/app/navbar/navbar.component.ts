@@ -15,7 +15,9 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
- 
+  Restart(){
+    location.reload(true);
+  }
   DragnDrop(){
     this.router.navigate(['/drag']);
   }
