@@ -14,3 +14,52 @@ li[tabindex]:focus {
     color:blue;
     outline: none;
 }
+.card-action1{
+    width: auto;
+    padding: 50px 600px;
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/darkened_background.jpg?alt=media&token=0352e33c-75b4-42a2-934f-979277915860");
+
+ }
+ .card-action{
+     width: 800px;
+     height: 200px;
+     margin: 0px -200px; 
+     opacity: 0.9;
+
+ 
+ }
+.h1edit{
+    width: 800px;
+    height: 100px;
+    margin: 0px -180px; 
+    opacity: 0.9;
+ 
+}
+p {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: white;
+
+  }
+  .inline-block {
+     width: 200px;
+    height: 50px;
+    margin: 1em;
+    border:1px solid black;
+}
+   h6{
+     font-size: 1em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: white;
+
+     
+   }

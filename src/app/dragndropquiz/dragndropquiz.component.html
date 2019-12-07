@@ -10,7 +10,7 @@
 </div>
 
 <div class="card-action1">
-  <div class="example-container">
+  <div class="example-container1">
     <h2>Name the car brand</h2>
     <div
       id="even"
@@ -20,7 +20,7 @@
       cdkDropListConnectedTo="cars"
       class="example-list"
       (cdkDropListDropped)="drop($event)"
-      >
+       >
       <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/volvo.webp?alt=media&token=16583598-9443-4964-b9ad-127c975e093a" style="height: 200px; width: 400px;">   
   </div>
   
@@ -39,6 +39,7 @@
       class="example-box"
       *ngFor="let number of options.data.Option "
       [cdkDragData]="number"
+      cdkDragBoundary=".card-action1"
       cdkDrag>  
             {{number }}
        </div>
@@ -49,7 +50,7 @@
 </div>
       
       <div class="card-action">
-        <div class="example-container">
+        <div class="example-boundary">
           <h2>Name the car brand</h2>
           <div
             id="even1"
@@ -76,6 +77,7 @@
                 class="example-box"
                 *ngFor="let number of optins.data.Option"
                 [cdkDragData]="number"
+                cdkDragBoundary=".card-action"
                 cdkDrag>{{number}}</div>
             </div>
             </ng-container>

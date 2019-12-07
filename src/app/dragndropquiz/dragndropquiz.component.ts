@@ -31,6 +31,8 @@ export class DragndropquizComponent implements OnInit {
   incorrect: string = '';
 
 
+ 
+
 
   data: any;
   constructor(private afs: AngularFirestore , private quizService: QuizService, private router: Router) { }

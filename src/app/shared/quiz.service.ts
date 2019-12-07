@@ -172,6 +172,7 @@ export class QuizService {
               {
                 this.correct1 = 'InCorrect';
               }
+              
               this.qnProgress++;
               if (this.qnProgress == 6) {
 

@@ -21,6 +21,7 @@ import { DragndropquizComponent } from './dragndropquiz/dragndropquiz.component'
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ResultComponent } from './result/result.component';
 import { DisplaypageComponent } from './displaypage/displaypage.component';
+import { FooterComponent } from './footer/footer.component';
  
 
 
@@ -43,7 +44,8 @@ var config= {
     QuizComponent,
     DragndropquizComponent,
     ResultComponent,
-    DisplaypageComponent
+    DisplaypageComponent,
+    FooterComponent
       
   ],
   imports: [
