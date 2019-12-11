@@ -1,18 +1,22 @@
 <app-navbar></app-navbar>
    
+<div class="r_background">
       
-      <div class="card" style="width: 18rem;">
-           <div class="card-body">
-            <h1 class="card-title">{{quizService.loggedInUsername}}</h1>
-            <h1 class="card-text">{{quizService.correctAnswerCount}}/5</h1>
-            <h1 class="card-text">{{quizService.correct}}</h1>
-          </div>
-         
-          <div class="card-body"> 
-             <button type="button" class="btn btn-default"  (click)="quizcomponent.restart()">Restart</button>
-            <button type="button" class="btn btn-default"  (click)="quizcomponent.submitanswer()">Submit</button>
-         
-          </div>
+  <div class="result_box">
+      <div class="result_body">
+        <h1 class="r_text" >{{quizService.loggedInUsername}}</h1>
+
+        <div class="r_result">
+          <p class="r_text" >{{quizService.correctAnswerCount}}/5</p>
+          <p class="r_text" >{{quizService.correct}}</p>     
         </div>
-       
- 
+
+        <div class="btn_flex">
+          <button type="button" class="btn btn-default btn-rounded my-3"  (click)="quizcomponent.restart()">Restart</button>
+          <button type="button" class="btn btn-default btn-rounded my-3"  (click)="quizcomponent.submitanswer()">Submit</button>
+        </div>
+      </div>
+  
+    
+  </div>
+</div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../shared/quiz.service';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { DisplaypageComponent } from '../displaypage/displaypage.component';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +11,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private quizService : QuizService,private router : Router , private afAuth: AngularFireAuth ) { }
+  constructor(private quizService : QuizService,private router : Router , private afAuth: AngularFireAuth) { }
 
   ngOnInit() {
   }

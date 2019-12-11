@@ -12,6 +12,12 @@ interface Drag{
 interface Drag1{
   Option: string[];
 }
+interface Drag2{
+  Option: string[];
+}
+interface Drag3{
+  Option: string[];
+}
 @Component({
   selector: 'app-dragndropquiz',
   templateUrl: './dragndropquiz.component.html',
@@ -22,7 +28,13 @@ interface Drag1{
 export class DragndropquizComponent implements OnInit {
   dragCol: AngularFirestoreCollection<Drag>;
   drag: any;
+  drag2: any;
+  drag3: any;
+
   dragCol1: AngularFirestoreCollection<Drag1>;
+  dragCol2: AngularFirestoreCollection<Drag2>;
+  dragCol3: AngularFirestoreCollection<Drag3>;
+
   drag1: any;
   optionss: any;
   correctAnswerCountfordrag: number = 0;
@@ -64,10 +76,43 @@ export class DragndropquizComponent implements OnInit {
             });
         })
     );
+    this.dragCol2 = this.afs.collection('Drag2');
+    this.drag2 = this.dragCol2.snapshotChanges()
+    .pipe(
+        map(actions => {
+            return actions.map(a => {
+                const data = a.payload.doc.data() as Drag2;
+                const id = a.payload.doc.id;
+                return{id, data};
+
+            });
+        })
+    );
+    this.dragCol3 = this.afs.collection('Drag3');
+    this.drag3 = this.dragCol3.snapshotChanges()
+    .pipe(
+        map(actions => {
+            return actions.map(a => {
+                const data = a.payload.doc.data() as Drag1;
+                const id = a.payload.doc.id;
+                return{id, data};
+
+            });
+        })
+    );
+
+
+    
    
   }
     even = [''];
   even1 = [''];
+  even2 = [''];
+  even3 = [''];
+  even4 = [''];
+
+
+
    drop(event: CdkDragDrop<string[]> , item: CdkDrag<string> ) {
     if (event.previousContainer === event.container) {
       
@@ -77,7 +122,7 @@ export class DragndropquizComponent implements OnInit {
                         event.container.data,
                         event.previousIndex,
                         event.currentIndex);
-                        if (event.item.data === 'Volvo') {
+                        if (event.item.data === 'https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/sandvich.png?alt=media&token=d46a8f1d-20e0-4a0b-83ec-c2eeb3ef4e10') {
                           this.correctAnswerCountfordrag++ ;
                           this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag * 100;
                           this.correct = 'Correct';
@@ -94,6 +139,7 @@ export class DragndropquizComponent implements OnInit {
                        
     }
   }
+
   drop1(event: CdkDragDrop<string[]> , item: CdkDrag<string> ) {
     if (event.previousContainer === event.container) {
       
@@ -103,7 +149,7 @@ export class DragndropquizComponent implements OnInit {
                         event.container.data,
                         event.previousIndex,
                         event.currentIndex);
-                        if (event.item.data === 'hummer') {
+                        if (event.item.data === 'https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/cap.png?alt=media&token=c3947b45-7802-4b33-80a5-2a1f4e7ec0c9') {
                           
                           this.correctAnswerCountfordrag++ ;
                           this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag * 100;
@@ -123,7 +169,59 @@ export class DragndropquizComponent implements OnInit {
   }
   
   
- 
+   drop2(event: CdkDragDrop<string[]> , item: CdkDrag<string> ) {
+    if (event.previousContainer === event.container) {
+      
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex); 
+    } else {
+      transferArrayItem(event.previousContainer.data,
+                        event.container.data,
+                        event.previousIndex,
+                        event.currentIndex);
+                        if (event.item.data === 'https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/cardboard.png?alt=media&token=cf10e352-3078-42aa-ab2c-bb3c350deb56') {
+                          this.correctAnswerCountfordrag++ ;
+                          this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag * 100;
+                          this.correct = 'Correct';
+                          console.log(this.correctAnswerCountfordrag100 + this.correct);
+                        }
+                        else{
+                          this.correctAnswerCountfordrag-- ;
+                          this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag *100;
+                          this.correct = 'InCorrect';
+                          console.log(this.correctAnswerCountfordrag100 + this.correct);
+
+
+                        }
+                       
+    }
+  }
+  
+  drop3(event: CdkDragDrop<string[]> , item: CdkDrag<string> ) {
+    if (event.previousContainer === event.container) {
+      
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex); 
+    } else {
+      transferArrayItem(event.previousContainer.data,
+                        event.container.data,
+                        event.previousIndex,
+                        event.currentIndex);
+                        if (event.item.data === 'https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/plast.png?alt=media&token=2c39b651-0ef1-4752-811f-b07eb6e37b78') {
+                          this.correctAnswerCountfordrag++ ;
+                          this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag * 100;
+                          this.correct = 'Correct';
+                          console.log(this.correctAnswerCountfordrag100 + this.correct);
+                        }
+                        else{
+                          this.correctAnswerCountfordrag-- ;
+                          this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag *100;
+                          this.correct = 'InCorrect';
+                          console.log(this.correctAnswerCountfordrag100 + this.correct);
+
+
+                        }
+                       
+    }
+  }
   
  restart() {
   location.reload(true);

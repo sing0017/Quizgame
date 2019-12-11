@@ -160,16 +160,22 @@ export class QuizService {
                this.correct = 'Not Bad';
                console.log(this.correct);
              }
-             else if (this.correctAnswerCount >= 1)
+             else if (this.correctAnswerCount <= 0)
               {
                this.correct = 'Try once Again';
                console.log(this.correct);
              }
+           
               console.log('correct' + this.correctAnswerCount);
         
               }
               else if(qID !=  choice)
               {
+                if (this.correctAnswerCount >= 0)
+                {
+                this.correct = 'come on';
+                console.log(this.correct);
+                }
                 this.correct1 = 'InCorrect';
               }
               

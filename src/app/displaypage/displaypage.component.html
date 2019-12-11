@@ -1,21 +1,38 @@
 <app-navbar></app-navbar>
 
-<h1>displaypage works!</h1>
-<ul>
-    <li>
-        <ng-container *ngIf="quizservice.numnber==1;">
-        <a  routerLink="/quiz"  routerLinkActive="active">Normal Quiz</a>
-        <a  routerLink="/drag"  routerLinkActive="active">DragnDrop Quiz</a>
-         </ng-container>
-    </li>
-</ul>
+<div class="fluid-container" id="f_background">
+  <div class="fluid-container" id="split1">
+
+    <div class="fluid-container" id="button_split">
+
+      <ng-container *ngIf="quizservice.numnber==1;">
+
+        <div class="btn btn-default btn-rounded my-3" id="btn_normal">
+          <a  routerLink="/quiz"  routerLinkActive="active"><h3>Normal Quiz</h3></a>
+        </div>
+
+        <div class="btn btn-default btn-rounded my-3" id="btn_drag">
+          <a  routerLink="/drag"  routerLinkActive="active"><h3>DragnDrop Quiz</h3></a>
+        </div>
+
+      </ng-container>
+
+      </div>
+  </div>
+
+  
+  <div class="fluid-container" id="split2">
+    <div class="fluid-container" id="text_split">
+      <h2>Teaching how to throw trash out to make a more sustainable future!</h2>
+    </div>
+  </div>
 
 <ng-container *ngIf="quizservice.numnber==0;">
 <!--Modal: Login / Register Form-->
 <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog cascading-modal" role="document">
           <!--Content-->
-          <div class="modal-content">
+          <div class="modal-content" id="modal_main">
       
             <!--Modal cascading tabs-->
             <div class="modal-c-tabs">
@@ -23,7 +40,7 @@
               <!-- Nav tabs -->
               <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
+                  <a class="nav-link" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
                     Login</a>
                 </li>
                 <li class="nav-item">
@@ -38,20 +55,20 @@
                 <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
       
                   <!--Body-->
+              <div class="modal_back">
                   <div class="modal-body mb-1">
                 <form [formGroup]="form" (ngSubmit)="login()">
                         <div class="form-group">
-                                <label for="Name">Username</label>
+                                <label for="Name"><h3>Email</h3></label>
                                 <input  type="text" class="form-control" formControlName="Name"> 
-                                <div *ngIf="form.controls.Name.touched && 
-                                !form.controls.Name.valid" class="alert alert-danger">
-                                Username is Required
-                            </div>
+                               
                               </div>
        
-                       <button [disabled]="!form.valid" class="btn btn-info" type="submit">Log in <i class="fas fa-sign-in ml-1"></i></button>
+                       <button  class="btn btn-info" type="submit">Log in <i class="fas fa-sign-in ml-1"></i></button>
                  </form>
-                  </div>
+              </div>
+
+                </div>
                   <!--Footer-->
                   <div class="modal-footer">
                   
@@ -65,24 +82,23 @@
                 <div class="tab-pane fade" id="panel8" role="tabpanel">
       
                   <!--Body-->
-                  <div class="modal-body">
+                  <div class="modal_back">
+                  <div class="modal-body" id="modal_abs">
                       <div class="form-group">
                             <form [formGroup]="form" (ngSubmit)="onSignup()">
                                     <div class="form-group">
-                                            <label for="Name">Username</label>
+                                            <label for="Name"><h3>Create Email</h3></label>
                                             <input  type="text" class="form-control" formControlName="Name"> 
-                                            <div *ngIf="form.controls.Name.touched && 
-                                            !form.controls.Name.valid" class="alert alert-danger">
-                                            Username is Required
-                                        </div>
-                                      
+                                       
                                           </div>
-                                         
+          
                            <button class="btn btn-info" type="submit">Sign up <i class="fas fa-sign-in ml-1"></i></button>
                              </form>
                       </div>
                        
                   </div>
+
+                </div>
                   <!--Footer-->
                   <div class="modal-footer">
                   
@@ -100,8 +116,8 @@
       <!--Modal: Login / Register Form-->
       
       <div class="text-center">
-        <a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">play games</a>
+        <a href="" class="btn btn-default btn-rounded my-3" id="playbtn" data-toggle="modal" data-target="#modalLRForm"><h3>Play Game!</h3></a>
        </div>
     </ng-container>
 
- 
+  </div>

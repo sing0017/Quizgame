@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+* { 
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; 
+  }
+  
+  body {
+    margin: 0; /* Ingen kanter i siden af browser */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0; /* Ingen ydre margen fra overskrifter */
+    padding: 0; /* Ingen indre margen fra overskrifter */
+    font-family: latino-urw,serif;
+    
+  }
+  
+  ul, ol {
+    margin: 0; /* Ingen ydre margen fra lister */ 
+    padding: 0; /* Ingen indre margen fra lister */
+    list-style-position: inside; /* List punkter står på linje */
+  }
+  
+  li {
+    margin: 0; /* Ingen ydre margen fra listpunkter */
+  }
+  
+  p {
+    margin: 0; /* Ingen ydre margen fra paragraffer */
+    padding: 0; /* Ingen indre margen fra paragraffer */
+    font-family: latino-urw,serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  /* Sikrer billeder er responsive */
+  img {
+    display: block; /* Billeder er et element (laver linjeskift) */
+    max-width: 100%; /* Bredde må maks fylde 100% */
+    height: auto; /* Højden skal tilpasse sig */
+  }
+  

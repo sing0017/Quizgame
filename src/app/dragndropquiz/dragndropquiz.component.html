@@ -1,4 +1,5 @@
 <app-navbar></app-navbar>
+
 <div class="modal-body" >
      <ng-container  *ngIf="correct=='InCorrect'"> 
      <img src="https://craigmcneil.me/wp-content/uploads/2017/02/wrong.jpg" style="height: 100px; width: 100px;">
@@ -9,30 +10,33 @@
      </ng-container>
 </div>
 
+
+
+
 <div class="card-action1">
   <div class="example-container1">
-    <h2>Name the car brand</h2>
+    <h2>Question1</h2>
     <div
-      id="even"
+      id="even1"
       cdkDropList
       cdk-drag-animating
-      [cdkDropListData]="even"
-      cdkDropListConnectedTo="cars"
+      [cdkDropListData]="even1"
+      cdkDropListConnectedTo="cars1"
       class="example-list"
       (cdkDropListDropped)="drop($event)"
        >
-      <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/volvo.webp?alt=media&token=16583598-9443-4964-b9ad-127c975e093a" style="height: 200px; width: 400px;">   
+      <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/foodtrash.png?alt=media&token=92d9b6aa-500b-415b-8dac-6af796e9aeaf" style="height: 200px; width: 400px;">   
   </div>
   
 <div class="example-container">
-  <h2>Available cars</h2>
+  <h2>Answer1</h2>
   <ng-container  *ngFor="let options of drag | async "> 
   <div
-    id="cars"
+    id="cars1"
     cdkDropList
     [cdkDropListData]="options.data.Option"
-    cdkDropListConnectedTo="even"
-    class="example-list"
+    cdkDropListConnectedTo="even1"
+    class="example-list1"
     (cdkDropListDropped)="drop($event)"
     [cdkDropListEnterPredicate]="noReturnPredicate">
     <div
@@ -41,51 +45,146 @@
       [cdkDragData]="number"
       cdkDragBoundary=".card-action1"
       cdkDrag>  
-            {{number }}
-       </div>
+      <img src="{{number}}">
+    </div>
   </div>
   </ng-container>
 </div>
 </div>
 </div>
       
-      <div class="card-action">
-        <div class="example-boundary">
-          <h2>Name the car brand</h2>
+
+
+
+      <div class="card-action2">
+        <div class="example-boundary2">
+          <h2>Question2</h2>
           <div
-            id="even1"
+            id="even2"
             cdkDropList
-            [cdkDropListData]="even1"
+            [cdkDropListData]="even2"
             cdkDropListConnectedTo="cars2"
-            class="example-list"
+            class="example-list2"
             (cdkDropListDropped)="drop1($event)"
             >
-            <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/hummer.jpg?alt=media&token=91bb5f34-07aa-4376-9dcc-fe5c4bd2206e" style="height: 200px; width: 200;">
+            <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/metaltrash.png?alt=media&token=e6ec50d0-4db5-4007-94d7-df6b5c236874" style="height: 200px; width: 200;">
           </div>
           <div class="example-container">
-            <h2>Available numbers2</h2>
+            <h2>Answer2</h2>
             <ng-container  *ngFor="let optins of drag1 | async "> 
             <div
               id="cars2"
               cdkDropList
               [cdkDropListData]="optins.data.Option"
-              cdkDropListConnectedTo="even1"
-              class="example-list"
+              cdkDropListConnectedTo="even2"
+              class="example-list2"
               (cdkDropListDropped)="drop1($event)"
               [cdkDropListEnterPredicate]="noReturnPredicate">
               <div
                 class="example-box"
                 *ngFor="let number of optins.data.Option"
                 [cdkDragData]="number"
-                cdkDragBoundary=".card-action"
-                cdkDrag>{{number}}</div>
+                cdkDragBoundary=".card-action2"
+                cdkDrag>
+                <img src="{{number}}">
+              </div>
             </div>
             </ng-container>
           </div>
         </div>
       </div>
-        
-       <div class="card-action">
+
+
+
+
+      
+<div class="card-action3">
+  <div class="example-container3">
+    <h2>Question3</h2>
+    <div
+      id="even3"
+      cdkDropList
+      cdk-drag-animating
+      [cdkDropListData]="even3"
+      cdkDropListConnectedTo="cars3"
+      class="example-list3"
+      (cdkDropListDropped)="drop2($event)"
+       >
+      <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/papirtrash.png?alt=media&token=0ed4a392-4e87-46c2-9f21-839a5931f422" style="height: 200px; width: 400px;">   
+  </div>
+  
+<div class="example-container">
+  <h2>Answer3</h2>
+  <ng-container  *ngFor="let options of drag2 | async "> 
+  <div
+    id="cars3"
+    cdkDropList
+    [cdkDropListData]="options.data.Option"
+    cdkDropListConnectedTo="even3"
+    class="example-list3"
+    (cdkDropListDropped)="drop2($event)"
+    [cdkDropListEnterPredicate]="noReturnPredicate">
+    <div
+      class="example-box"
+      *ngFor="let number of options.data.Option "
+      [cdkDragData]="number"
+      cdkDragBoundary=".card-action3"
+      cdkDrag>  
+      <img src="{{number}}">
+    </div>
+  </div>
+  </ng-container>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="card-action4">
+  <div class="example-container4">
+    <h2>Question4</h2>
+    <div
+      id="even4"
+      cdkDropList
+      cdk-drag-animating
+      [cdkDropListData]="even4"
+      cdkDropListConnectedTo="cars4"
+      class="example-list4"
+      (cdkDropListDropped)="drop3($event)"
+       >
+      <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/plasttrash.png?alt=media&token=9b1e5d2c-f30a-4df5-b3a4-3e2042c629a2" style="height: 200px; width: 400px;">   
+  </div>
+  
+<div class="example-container">
+  <h2>Answer4</h2>
+  <ng-container  *ngFor="let options of drag3 | async "> 
+  <div
+    id="cars4"
+    cdkDropList
+    [cdkDropListData]="options.data.Option"
+    cdkDropListConnectedTo="even4"
+    class="example-list4"
+    (cdkDropListDropped)="drop3($event)"
+    [cdkDropListEnterPredicate]="noReturnPredicate">
+    <div
+      class="example-box"
+      *ngFor="let number of options.data.Option "
+      [cdkDragData]="number"
+      cdkDragBoundary=".card-action4"
+      cdkDrag>  
+      <img src="{{number}}">
+    </div>
+  </div>
+  </ng-container>
+</div>
+</div>
+</div>
+      
+
+
+       <div class="card-action5">
         <div class="modal-body" >
           <h1>Your current Score:</h1><tr><h1>{{correctAnswerCountfordrag100}}</h1>
  </div>

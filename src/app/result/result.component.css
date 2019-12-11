@@ -1,0 +1,35 @@
+.r_background {
+    background: url(src\assets\img\darkened_background.jpg) no-repeat center;
+    background-size: cover;
+    height: 700px;
+    width: 100%;
+    padding-top: 200px;
+}
+
+.btn {
+    background-color: #801c1c;
+    color: white;
+    border-color: #801c1c;
+}
+
+.result_box {
+    background: #282828;
+    color: white;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    padding: 25px 25px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.r_result {
+    margin-top: 20px;
+    font-size: 20pt;
+}
+
+.btn_flex {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
