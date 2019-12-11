@@ -78,7 +78,7 @@ export class QuizService {
                     this.loggedIn.next(true); 
                     this.numnber = 1;   
                     this.loggedInUser=authState.uid;    
-                    this.loggedInUsername = authState.email;         
+                    this.loggedInUsername = authState.email.slice(0 , -10).toUpperCase();   
                     this.router.navigate(['/']);                     
                     console.log("logged in as " + authState.uid);
                    
@@ -96,7 +96,7 @@ export class QuizService {
                             this.loggedIn.next(true); 
                             this.numnber = 1;   
                             this.loggedInUser=authState.uid;    
-                            this.loggedInUsername = authState.email;         
+                            this.loggedInUsername = authState.email.charAt(0).toUpperCase();         
                             this.router.navigate(['/quiz']);                     
                             console.log("logged in as " + authState.uid);
                           
@@ -116,7 +116,7 @@ export class QuizService {
                         this.loggedIn.next(true); 
                         this.numnber = 1; 
                         this.loggedInUser=authState.user.uid; 
-                        this.loggedInUsername = authState.user.email;               
+                        this.loggedInUsername = authState.user.email.charAt(0).toUpperCase();               
                         this.router.navigate(['']);   
                         location.reload(true);                 
                     })
