@@ -38,6 +38,8 @@ export class QuizService {
   qnProgress: number = 1;
   correctAnswerCount: number = 0;
   password: string = '123456';
+  usernamme: string = '';
+
 
   get isLoggedIn(){
     return this.loggedIn.asObservable();  
@@ -47,7 +49,9 @@ export class QuizService {
   //For signin the user
   signup(Name: string ,   password: string = '123456' )
   { 
-    return this.afAuth.auth.createUserWithEmailAndPassword(Name, password)    
+    this.usernamme = Name + '@gmail.com';
+
+    return this.afAuth.auth.createUserWithEmailAndPassword(this.usernamme, password)    
         .then( 
             authState => {
                 console.log("signup-then", authState);  
@@ -109,8 +113,9 @@ export class QuizService {
         
   //For login the user if he/she already a user   
   login(username  , password: string = '123456'){       
-            if(username !== '' && password !== ''){                 
-                return this.afAuth.auth.signInWithEmailAndPassword(username,password)
+            if(username !== '' && password !== ''){ 
+               this.usernamme = username + '@gmail.com';
+                return this.afAuth.auth.signInWithEmailAndPassword(this.usernamme,password)
                     .then(authState => {          
                         console.log("Login-then",authState);    
                         this.loggedIn.next(true); 
