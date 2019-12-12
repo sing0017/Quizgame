@@ -6,10 +6,11 @@
    
  }
 
-.example-container ::after {
+.example-container  {
   content: "";
   clear: both;
   display: table;
+  margin: 0px 220px;
 }
   
    .example-container2{
