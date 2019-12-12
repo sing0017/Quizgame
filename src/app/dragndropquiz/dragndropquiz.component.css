@@ -6,7 +6,7 @@
    
  }
 
-.example-container  {
+.example-container ::after {
   content: "";
   clear: both;
   display: table;
