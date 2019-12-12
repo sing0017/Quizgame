@@ -82,7 +82,7 @@ export class QuizService {
                     this.loggedIn.next(true); 
                     this.numnber = 1;   
                     this.loggedInUser=authState.uid;    
-                    this.loggedInUsername = authState.email.slice(0 , -10).toUpperCase();   
+                    this.loggedInUsername = authState.email.charAt(0).toUpperCase() + authState.email.slice(1 , -10);   
                     this.router.navigate(['/']);                     
                     console.log("logged in as " + authState.uid);
                    
@@ -165,7 +165,7 @@ export class QuizService {
                this.correct = 'Not Bad';
                console.log(this.correct);
              }
-             else if (this.correctAnswerCount <= 0)
+             else if (this.correctAnswerCount >= 1)
               {
                this.correct = 'Try once Again';
                console.log(this.correct);
@@ -176,7 +176,7 @@ export class QuizService {
               }
               else if(qID !=  choice)
               {
-                if (this.correctAnswerCount >= 0)
+                if (this.correctAnswerCount == 0)
                 {
                 this.correct = 'come on';
                 console.log(this.correct);

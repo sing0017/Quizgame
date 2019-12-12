@@ -1,67 +1,81 @@
 <app-navbar></app-navbar>
-
+<div class="mainbody">
 <div class="modal-body" >
      <ng-container  *ngIf="correct=='InCorrect'"> 
-     <img src="https://craigmcneil.me/wp-content/uploads/2017/02/wrong.jpg" style="height: 100px; width: 100px;">
+     <img src="https://craigmcneil.me/wp-content/uploads/2017/02/wrong.jpg" style="height: 50px; width: 100px;">
     </ng-container>
      <br>
      <ng-container  *ngIf="correct=='Correct'"> 
-      <img src="https://media.istockphoto.com/vectors/grunge-green-correct-square-rubber-seal-stamp-on-white-background-vector-id959944312" style="height: 100px; width: 100px;">
+      <img src="https://media.istockphoto.com/vectors/grunge-green-correct-square-rubber-seal-stamp-on-white-background-vector-id959944312" style="height: 50px; width: 100px;">
      </ng-container>
 </div>
-
+<div class="card-action5">
+    <div class="modal-body1" >
+      <h6>Your current Score: {{correctAnswerCountfordrag100}}</h6>
+</div>
+<button (click)="submit()">Submit you score</button>
+<button (click)="restart()">Restart</button>
+   </div>
 
 
 
 <div class="card-action1">
   <div class="example-container1">
     <div class="example-container2">
-    <h2>Question1</h2>
+      <div class="Question1">
+          <h6>Question1</h6>
+          <div style="float: left; width: 200px; padding: -20px 0px;"
+             cdkDropList #h1 = "cdkDropList"
+            cdk-drag-animating
+            [cdkDropListData]="even1"
+            cdkDropListConnectedTo="cars1"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)"
+             >
+            <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/foodtrash.png?alt=media&token=92d9b6aa-500b-415b-8dac-6af796e9aeaf" style="height: 150px; width: 200px;">   
+        </div>
+      </div>
+   <div class="Question2">
+      <h6>Question2</h6>
+      <div style="float: left; width: 200px; padding:-20px 0px;"
+         cdkDropList #h3 = "cdkDropList"
+        [cdkDropListData]="even1"
+        cdkDropListConnectedTo="cars1"
+        class="example-list2"
+        (cdkDropListDropped)="drop1($event)"
+        >
+        <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/metaltrash.png?alt=media&token=e6ec50d0-4db5-4007-94d7-df6b5c236874" style="height: 150px; width: 200px;">
+      </div> 
+   </div>
+   <div class="Question3">
+      <h6>Question3</h6>
+      <div style="float: left; width: 200px;"
+         cdkDropList #h4 = "cdkDropList"
+         [cdkDropListData]="even1"
+        cdkDropListConnectedTo="cars1"
+        class="example-list3"
+        (cdkDropListDropped)="drop2($event)"
+         >
+        <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/papirtrash.png?alt=media&token=0ed4a392-4e87-46c2-9f21-839a5931f422" style="height: 150px; width: 200px;">   
+    </div>
+   </div>
+<div class="Question4">
+    <h6>Question4</h6>
     <div style="float: left; width: 200px; padding: -20px 0px;"
-       cdkDropList #h1 = "cdkDropList"
-      cdk-drag-animating
-      [cdkDropListData]="even1"
+       cdkDropList #h5 = "cdkDropList"
+       [cdkDropListData]="even1"
       cdkDropListConnectedTo="cars1"
-      class="example-list"
-      (cdkDropListDropped)="drop($event)"
+      class="example-list4"
+      (cdkDropListDropped)="drop3($event)"
        >
-      <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/foodtrash.png?alt=media&token=92d9b6aa-500b-415b-8dac-6af796e9aeaf" style="height: 150px; width: 200px;">   
-  </div>
-  <h2>Question2</h2>
-  <div style="float: left; width: 200px; padding:-20px 0px;"
-     cdkDropList #h3 = "cdkDropList"
-    [cdkDropListData]="even1"
-    cdkDropListConnectedTo="cars1"
-    class="example-list2"
-    (cdkDropListDropped)="drop1($event)"
-    >
-    <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/metaltrash.png?alt=media&token=e6ec50d0-4db5-4007-94d7-df6b5c236874" style="height: 150px; width: 200px;">
-  </div>
-  <h2>Question3</h2>
-  <div style="float: left; width: 200px;"
-     cdkDropList #h4 = "cdkDropList"
-     [cdkDropListData]="even1"
-    cdkDropListConnectedTo="cars1"
-    class="example-list3"
-    (cdkDropListDropped)="drop2($event)"
-     >
-    <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/papirtrash.png?alt=media&token=0ed4a392-4e87-46c2-9f21-839a5931f422" style="height: 150px; width: 200px;">   
-</div>
-<h2>Question4</h2>
-<div style="float: left; width: 200px; padding: -20px 0px;"
-   cdkDropList #h5 = "cdkDropList"
-   [cdkDropListData]="even1"
-  cdkDropListConnectedTo="cars1"
-  class="example-list4"
-  (cdkDropListDropped)="drop3($event)"
-   >
-  <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/plasttrash.png?alt=media&token=9b1e5d2c-f30a-4df5-b3a4-3e2042c629a2" style="height: 150px; width: 200px;">   
+      <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/plasttrash.png?alt=media&token=9b1e5d2c-f30a-4df5-b3a4-3e2042c629a2" style="height: 150px; width: 200px;">   
+    </div>
+    
 </div>
 </div>
 
 <div class="example-container" cdkDropListGroup>
-  <h2>Answer1</h2>
-  <ng-container  *ngFor="let options of drag | async "> 
+   <ng-container  *ngFor="let options of drag | async "> 
   <div
      cdkDropList #h2 = "cdkDropList"
     [cdkDropListData]="options.data.Option"
@@ -73,24 +87,18 @@
       *ngFor="let number of options.data.Option "
       [cdkDragData]="number"
        cdkDrag #h1 = "cdkDrag">  
-      <img src="{{number}}" style="height: 150px; width: 200px; padding: -20px 0px; ">
+      <img src="{{number}}" style="height: 100px; width: 100px; padding: -20px 0px; ">
     </div>
   </div>
   </ng-container>
 </div>
 </div>
 </div>
-      
+</div>      
 
 
  
-       <div class="card-action5">
-        <div class="modal-body" >
-          <h1>Your current Score:</h1><tr><h1>{{correctAnswerCountfordrag100}}</h1>
- </div>
-<button (click)="submit()">Submit you score</button>
-<button (click)="restart()">Restart</button>
-       </div>
+      
      
         
          

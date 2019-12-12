@@ -1,4 +1,11 @@
  
+ .mainbody{
+  background: url(src\assets\img\darkened_background.jpg) no-repeat center;
+  background-size: cover;
+  height:  700px;
+   
+ }
+
 .example-container ::after {
   content: "";
   clear: both;
@@ -7,15 +14,55 @@
   
    .example-container2{
      height: 300px;
-     width: 1000px;
+     width: auto;
    }
   
   .example-box  {
     float: left;
-    width: 33.33%;
-    padding: 5px;
+    width: 10%;
+    margin: 0px 20px;
   }
-  
+  .Question1{
+    height: 200px;
+    width: 200px;
+    float: left;
+    padding: 20px 150px;
+  }
+  .Question2{
+    height: 200px;
+    width: 200px;
+    float: left;
+    padding: 20px 150px;
+
+  }
+  .Question3{
+    height: 200px;
+    width: 200px;
+    float: left;
+    padding: 20px 150px;
+
+  }
+  .Question4{
+    height: 200px;
+    width: 200px;
+    float: left;
+    padding: 20px 150px;
+
+  }
+  h6{
+    font-size: 2em;
+   margin-top: 0.67em;
+   margin-bottom: 0.67em;
+   margin-left: 0;
+   margin-right: 0;
+   font-weight: bold;
+   color: white;
+
+    
+  }
+  .modal-body{
+    height: 70px;
+  }
   .cdk-drag-preview {
     box-sizing: border-box;
     border-radius: 4px;
