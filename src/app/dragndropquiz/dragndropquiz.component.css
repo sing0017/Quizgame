@@ -12,10 +12,16 @@
   display: table;
   margin: 0px 220px;
 }
-  
+  .btn {
+    background-color: #801c1c;
+    color: white;
+    border-color: #801c1c;
+    margin: 0px 10px;
+}
    .example-container2{
      height: 300px;
      width: auto;
+     padding: 40px 0px;
    }
   
   .example-box  {
@@ -61,8 +67,9 @@
 
     
   }
-  .modal-body{
+  .card-action5{
     height: 70px;
+    margin: 0px 600px;
   }
   .cdk-drag-preview {
     box-sizing: border-box;

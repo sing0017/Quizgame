@@ -5,8 +5,7 @@ import { FormBuilder , FormGroup  , Validators} from '@angular/forms';
 //import {PassworValidator} from './passwordValidator';
 //import { QuizService } from './login.service';
 import {ActivatedRoute} from '@angular/router';
-import{Participant} from './Participant';
-import {AngularFirestore , AngularFirestoreDocument, AngularFirestoreCollection} from 'angularfire2/firestore';
+ import {AngularFirestore , AngularFirestoreDocument, AngularFirestoreCollection} from 'angularfire2/firestore';
 import { map } from 'rxjs/operators';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { BehaviorSubject } from 'rxjs';
@@ -20,9 +19,7 @@ import { BehaviorSubject } from 'rxjs';
 export class RegisterComponent implements OnInit {
   
   form: FormGroup;
-  participant = new Participant();
-  participantsCol: AngularFirestoreCollection<Participant>;
-  participants: any;
+  
   naame: string = 'harman';
   title: string;
   invalidLoginMessage;

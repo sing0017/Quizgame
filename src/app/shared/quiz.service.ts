@@ -60,8 +60,7 @@ export class QuizService {
                 this.loggedInUser = authState.user.uid;
                 this.loggedInUsername = authState.user.email;  
                 this.loggedInUserdname = authState.user.displayName;                             
-                this.router.navigate(['/drag']);
-                location.reload(true);                 
+                 location.reload(true);                 
                 console.log(authState.user.displayName);
             }
         )
@@ -93,23 +92,7 @@ export class QuizService {
               });           
           } 
          
-          getCurrentUser1()
-          {       
-                    return this.afAuth.authState.subscribe(authState => {
-                        if(authState){
-                            this.loggedIn.next(true); 
-                            this.numnber = 1;   
-                            this.loggedInUser=authState.uid;    
-                            this.loggedInUsername = authState.email.charAt(0).toUpperCase();         
-                            this.router.navigate(['/quiz']);                     
-                            console.log("logged in as " + authState.uid);
-                          
-                        } 
-                        else{
-                          this.router.navigate(['quiz']);                      
-                        }           
-                      });           
-                  } 
+           
         
   //For login the user if he/she already a user   
   login(username  , password: string = '123456'){       

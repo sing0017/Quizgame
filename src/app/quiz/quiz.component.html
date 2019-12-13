@@ -2,25 +2,19 @@
 
  
           <div class="card-action1">
-
-               
                 <ng-container  *ngFor="let options of questions | async "> 
                     <ng-container  *ngIf="options.data.QnID==quizService.qnProgress">
-                       
-                          
-               
+                                        <p>{{options.data.QnID}}/5</p>
                             <div class="h1edit">
                                 <p  >{{options.data.Qn }}</p>
-                            </div>
-                           
-                            <div class="card-action">
-                                
-                    <ng-container *ngFor="let option of options.data.Option  ; let i = index" >
-                        
-                           <h6     (click)="quizService.Answer(options.data.Answer,i)">  {{option}}  </h6>
-                         
+                            </div>  
+                            <div class="card-action">         
+                    <ng-container *ngFor="let option of options.data.Option  ; let i = index" >     
+                           <h6     (click)="quizService.Answer(options.data.Answer,i)">  {{option}}  </h6>       
                 </ng-container>
                 </div>
+
+
                 <div class="modal-body" >
                     <ng-container  *ngIf="quizService.correct1=='InCorrect'"> 
                     <img src="https://craigmcneil.me/wp-content/uploads/2017/02/wrong.jpg" style="height: 100px; width: 100px;">

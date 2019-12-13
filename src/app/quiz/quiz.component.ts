@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuizService } from '../shared/quiz.service';
-import {Participant} from '../register/Participant';
-import {Question} from '../shared/question';
+ import {Question} from '../shared/question';
 import {RegisterComponent} from '../register/register.component';
 import { AngularFirestoreCollection, AngularFirestore } from 'angularfire2/firestore';
 import{map} from 'rxjs/operators';
@@ -25,11 +24,9 @@ interface User{
 
 export class QuizComponent implements OnInit {
 
-  participant = new Participant();
-   question = new Question();
+    question = new Question();
   questionsCol: AngularFirestoreCollection<Question>;
-  participantsCol: AngularFirestoreCollection<Participant>;
-
+ 
    questions: any;
    participants: any;
      correctAnswerCount: number = 0;

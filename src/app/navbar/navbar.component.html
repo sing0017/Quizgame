@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="index.html"><h3>{{quizService.loggedInUsername}}</h3></a>
+  <a class="navbar-brand" href="Index.html"><h3>{{quizService.loggedInUsername}}</h3></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,7 +7,7 @@
       <ul class="navbar-nav">
         <ng-container *ngIf="quizService.numnber==0;">
             <li class="nav-item item">
-                <a  class="nav-link" routerLink=""  routerLinkActive="active">Homepage</a>
+                <a  class="nav-link" (click)="Restart()">Homepage</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link item"   routerLinkActive="active">Aboutpage</a>
@@ -20,7 +20,7 @@
 
         <ng-container *ngIf="quizService.numnber==1;">
             <li class="nav-item">
-                <a  class="nav-link item" routerLink=""  routerLinkActive="active">Homepage</a>
+                <a  class="nav-link item" (click)="Restart()">Homepage</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link item"   routerLinkActive="active">Aboutpage</a>
