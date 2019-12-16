@@ -14,52 +14,107 @@ li[tabindex]:focus {
     color:blue;
     outline: none;
 }
-.card-action1{
-    width: auto;
-    padding: 50px 600px;
+.quiz{
+    width: 100%;
     background-image: url("https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/darkened_background.jpg?alt=media&token=0352e33c-75b4-42a2-934f-979277915860");
     height: 700px;
+    margin: auto;
  }
- .card-action{
+ .answers{
      width: 800px;
      height: 200px;
-     margin: 0px -200px; 
+     margin: auto; 
      opacity: 0.9;
-
- 
+     display: flex;
  }
-.h1edit{
+
+ p{
+    text-align: right;
+    color: #ffffff;
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    font-size: 50px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+ }
+
+ .ko{
+     margin: auto;
+     width: 800px;
+    height: 300px;
+ }
+.question{
     width: 800px;
     height: 100px;
-    margin: 0px -180px; 
-    opacity: 0.9;
- 
+    margin: auto;  
 }
-p {
-    display: block;
-    font-size: 2em;
-    margin-top: 0.67em;
-    margin-bottom: 0.67em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: bold;
-    color: white;
-
-  }
   .inline-block {
      width: 200px;
     height: 50px;
     margin: 1em;
     border:1px solid black;
 }
-   h6{
-     font-size: 1em;
+   .answer{
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 70px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    margin: 0 10px; 
+   }
+
+   .answer:hover{
+       background-color: rgba(255, 255, 255, 1);
+   }
+
+
+.title{
+    display: block;
+    font-size: 25px;
     margin-top: 0.67em;
     margin-bottom: 0.67em;
     margin-left: 0;
     margin-right: 0;
     font-weight: bold;
     color: white;
+    text-transform: uppercase;
+    text-align: center;
+    }
 
-     
-   }
+.wrong{
+    width: 150px;
+    height: 100px;
+    background-color:  #801c1c;
+    border-radius: 5px;
+    padding: 30px 0;
+    position: absolute;
+    color: #ffffff;
+    top: 40%;
+    left: 15%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 20px;
+
+}
+
+.right{
+    width: 150px;
+    height: 100px;
+    background-color: #34b334;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 30px 0;
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 20px;
+
+
+}

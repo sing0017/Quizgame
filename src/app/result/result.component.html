@@ -16,7 +16,28 @@
           <button type="button" class="btn btn-default btn-rounded my-3"  (click)="quizcomponent.submitanswer()">Submit</button>
         </div>
       </div>
-  
-    
+      <div class="r_centerimg">
+     <ng-container *ngIf="quizService.correctAnswerCount>= 5">
+      <img class="r_img" src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/bravo.jpg?alt=media&token=9bae88fb-8278-4cad-95aa-7e69ffc9ade3">
+     </ng-container>
+     <ng-container *ngIf="quizService.correctAnswerCount== 4">
+      <img class="r_img" src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/notbad.jpg?alt=media&token=f4100549-98be-48b0-875d-67bc9b57e215">
+    </ng-container>
+    <ng-container *ngIf="quizService.correctAnswerCount== 3">
+      <img class="r_img" src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/notbad.jpg?alt=media&token=f4100549-98be-48b0-875d-67bc9b57e215">
+    </ng-container>
+    <ng-container *ngIf="quizService.correctAnswerCount== 2">
+      <img class="r_img" src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/tryagain.jfif?alt=media&token=ffe7589c-ca04-409b-b908-9755cc1545d6">
+    </ng-container>
+    <ng-container *ngIf="quizService.correctAnswerCount== 1">
+      <img class="r_img" src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/tryagain.jfif?alt=media&token=ffe7589c-ca04-409b-b908-9755cc1545d6">
+    </ng-container>
+    <ng-container *ngIf="quizService.correctAnswerCount== 0">
+      <img class="r_img" src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/tryagain.jfif?alt=media&token=ffe7589c-ca04-409b-b908-9755cc1545d6">
+    </ng-container>
   </div>
+  </div>
+ 
+
+
 </div>

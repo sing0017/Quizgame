@@ -10,17 +10,11 @@ import {Question} from './question';
 export class QuizService {
   
   private loggedIn = new BehaviorSubject<boolean>(false);
-    resstart = new BehaviorSubject<boolean>(false);
-
   loggedInUser;
   loggedInUsername: string;
   loggedInUserdname: string = 'harman';
   numnber:Number = 0;
   number2: number = 0;
-
-
-
- 
   questions: Observable<Question[]>;
   quizcomponent: any;
 
@@ -31,7 +25,6 @@ export class QuizService {
   }
   correct: string = '';
   correct1: string = '';
-
   qns: any[];
   seconds: number;
   timer;

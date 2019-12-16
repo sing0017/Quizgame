@@ -14,6 +14,7 @@ export class ResultComponent implements OnInit {
   constructor( private quizService : QuizService, private quizcomponent: QuizComponent ) { }
   
   ngOnInit() {
+    
    }
 
 }

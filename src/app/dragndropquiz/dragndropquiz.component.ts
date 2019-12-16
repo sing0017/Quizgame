@@ -20,22 +20,19 @@ interface Drag{
 export class DragndropquizComponent implements OnInit {
   dragCol: AngularFirestoreCollection<Drag>;
   drag: any;
-   optionss: any;
+  optionss: any;
   correctAnswerCountfordrag: number = 0;
   correctAnswerCountfordrag100: number = 0;
   correct: string = '';
   incorrect: string = '';
-
-
- 
-
-
   data: any;
+  even = [''];
+  even1 = [''];
+ 
   constructor(private afs: AngularFirestore , private quizService: QuizService, private router: Router) { }
-  ngOnInit() {
-     // this.quizService.getCurrentUser();
-     //this.quizService.loggedInUser;
 
+  ngOnInit() {
+    //for getting list of option from the afs collection name 'Drag'
     this.dragCol = this.afs.collection('Drag');
     this.drag = this.dragCol.snapshotChanges()
     .pipe(
@@ -50,85 +47,61 @@ export class DragndropquizComponent implements OnInit {
     ); 
     
   }
-    even = [''];
-  even1 = [''];
+   //this is one only method for drop event where each div connected with the same event where we pass 2 variable
+   // one of the item is different for each div , so that when the item is dropped in that div it enter that if statement
+   // and then event.item.data match with the correct url t will give correct statement and add the score by one else it sbstract it 
    
-
-
-
    drop(event: CdkDragDrop<string[]> ,  item: number ) {
       transferArrayItem(event.previousContainer.data, event.container.data,  event.previousIndex,  event.currentIndex);
                         if (item === 1) {
-                          if (event.item.data === 'https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/sandvich.png?alt=media&token=d46a8f1d-20e0-4a0b-83ec-c2eeb3ef4e10') {
-                            this.correctAnswerCountfordrag++ ;
-                            this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag * 100;
-                            this.correct = 'Correct';
-                           }
-                         else if (event.item.data === 'https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/chocolatebar%20-%20Copy.png?alt=media&token=1c64d8d1-7ca5-43ff-a483-8f752c36dd19') {
-                            this.correctAnswerCountfordrag++ ;
-                            this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag * 100;
-                            this.correct = 'Correct';
+                          if (event.item.data === 'https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/sandvich.png?alt=media&token=d46a8f1d-20e0-4a0b-83ec-c2eeb3ef4e10' || event.item.data === 'https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/chocolatebar%20-%20Copy.png?alt=media&token=1c64d8d1-7ca5-43ff-a483-8f752c36dd19') {
+                            this.correctness();
                            }
                           else{
-                            this.correctAnswerCountfordrag-- ;
-                            this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag *100;
-                            this.correct = 'InCorrect';
+                            this.incorrectness();
                            }
                         }
                         else if (item === 2)
                         {
                           if (event.item.data === 'https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/cap.png?alt=media&token=c3947b45-7802-4b33-80a5-2a1f4e7ec0c9' ) {  
-                            this.correctAnswerCountfordrag++ ;
-                            this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag * 100;
-                             this.correct = 'Correct';
+                            this.correctness();
                            }
                           else{
-                            this.correctAnswerCountfordrag-- ;
-                            this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag *100;
-                            this.correct = 'InCorrect';
+                            this.incorrectness();
                            }  
                         }
                         else if(item === 3)
                         {
-                          if (event.item.data === 'https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/cardboard.png?alt=media&token=cf10e352-3078-42aa-ab2c-bb3c350deb56' ) {
-                            this.correctAnswerCountfordrag++ ;
-                            this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag * 100;
-                            this.correct = 'Correct';
-                           }
-                          else if (event.item.data === 'https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/table.png?alt=media&token=19ac9fdf-dc44-4cf6-a138-bbf32248b62a'   ) {
-                            this.correctAnswerCountfordrag++ ;
-                            this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag * 100;
-                            this.correct = 'Correct';
+                          if (event.item.data === 'https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/cardboard.png?alt=media&token=cf10e352-3078-42aa-ab2c-bb3c350deb56'|| event.item.data === 'https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/table.png?alt=media&token=19ac9fdf-dc44-4cf6-a138-bbf32248b62a' ) {
+                            this.correctness();
                            }
                           else{
-                            this.correctAnswerCountfordrag-- ;
-                            this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag *100;
-                            this.correct = 'InCorrect';
+                            this.incorrectness();
                            } 
                         }
                         else if(item === 4)
                         {
-                          if (event.item.data === 'https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/plast.png?alt=media&token=2c39b651-0ef1-4752-811f-b07eb6e37b78'  ) {
-                            this.correctAnswerCountfordrag++ ;
-                            this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag * 100;
-                            this.correct = 'Correct';
-                           }
-                          else if (event.item.data === 'https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/plasticbag.png?alt=media&token=81fa025d-a84b-4a41-a838-81b500bca162'   ) {
-                            this.correctAnswerCountfordrag++ ;
-                            this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag * 100;
-                            this.correct = 'Correct';
+                          if (event.item.data === 'https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/plast.png?alt=media&token=2c39b651-0ef1-4752-811f-b07eb6e37b78' || event.item.data === 'https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/plasticbag.png?alt=media&token=81fa025d-a84b-4a41-a838-81b500bca162'  ) {
+                            this.correctness();
                            }
                           else{
-                            this.correctAnswerCountfordrag-- ;
-                            this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag *100;
-                            this.correct = 'InCorrect';
+                            this.incorrectness();
                            }
                         }                      
     }
     
  restart() {
-  location.reload(true);
-  
+  location.reload(true); 
+}
+correctness(){
+  this.correctAnswerCountfordrag++ ;
+  this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag * 100;
+  this.correct = 'Correct';
+}
+incorrectness(){
+  this.correctAnswerCountfordrag-- ;
+  this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag *100;
+  this.correct = 'InCorrect';
 }
  submit(){ 
   this.afs.collection('users')

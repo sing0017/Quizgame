@@ -21,11 +21,11 @@ import { DragndropquizComponent } from './dragndropquiz/dragndropquiz.component'
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ResultComponent } from './result/result.component';
 import { DisplaypageComponent } from './displaypage/displaypage.component';
-import { FooterComponent } from './footer/footer.component';
- 
+import { AboutComponent } from './about/about.component';
+  
 
 
-
+//connecting this Angular2 website with firebase
 var config= {
   apiKey: "AIzaSyABeYJnzrpA0WyVUvNjgSx7NZbUF-9RxVw",
     authDomain: "myfinalproject-e3283.firebaseapp.com",
@@ -45,7 +45,8 @@ var config= {
     DragndropquizComponent,
     ResultComponent,
     DisplaypageComponent,
-    FooterComponent
+    AboutComponent,
+     
       
   ],
   imports: [

@@ -1,33 +1,49 @@
 <app-navbar></app-navbar>
 
  
-          <div class="card-action1">
+          <div class="quiz">
                 <ng-container  *ngFor="let options of questions | async "> 
                     <ng-container  *ngIf="options.data.QnID==quizService.qnProgress">
-                                        <p>{{options.data.QnID}}/5</p>
-                            <div class="h1edit">
-                                <p  >{{options.data.Qn }}</p>
+                      <div class="ko">
+                        <img src="{{options.data.ImageURL}}" style="margin: auto; height: 250px; width: 300px;">
+
+                                        <p>Question {{options.data.QnID}}/5</p>
+                                      </div>
+                            <div class="question">
+                                <div class="title" >{{options.data.Qn }}</div>
                             </div>  
-                            <div class="card-action">         
+                            <div class="answers">         
                     <ng-container *ngFor="let option of options.data.Option  ; let i = index" >     
-                           <h6     (click)="quizService.Answer(options.data.Answer,i)">  {{option}}  </h6>       
+                           <div class="answer"   (click)="quizService.Answer(options.data.Answer,i)">  {{option}}  </div>       
                 </ng-container>
                 </div>
 
 
-                <div class="modal-body" >
-                    <ng-container  *ngIf="quizService.correct1=='InCorrect'"> 
-                    <img src="https://craigmcneil.me/wp-content/uploads/2017/02/wrong.jpg" style="height: 100px; width: 100px;">
-                   </ng-container>
+                <div class="right-wrong-text" >
+                    <div class="wrong"  *ngIf="quizService.correct1=='InCorrect'" > 
+                    Wrong, nice try!
+                    </div>
                     <br>
-                    <ng-container  *ngIf="quizService.correct1=='Correct'"> 
-                     <img src="https://media.istockphoto.com/vectors/grunge-green-correct-square-rubber-seal-stamp-on-white-background-vector-id959944312" style="height: 100px; width: 100px;">
-                    </ng-container>
+                    <div class="right"  *ngIf="quizService.correct1=='Correct'"> 
+                     Correct, nice job!
+                    </div>
                   </div>   
               </ng-container> 
           </ng-container>
                
             </div>
+
+<script type="text/javascript">
+    $(function(){
+      $('.answer').hover(function(){
+        $(this).width(1.25*$(this).width());
+        $(this).height(1.25*$(this).height());
+      }, function(){
+        $(this).width(0.8*$(this).width());
+        $(this).width(0.8*$(this).height());
+      });
+    });
+</script>
 
  
 

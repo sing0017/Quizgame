@@ -24,19 +24,12 @@ interface User{
 
 export class QuizComponent implements OnInit {
 
-    question = new Question();
-  questionsCol: AngularFirestoreCollection<Question>;
- 
+   question = new Question();
+   questionsCol: AngularFirestoreCollection<Question>;
    questions: any;
    participants: any;
-     correctAnswerCount: number = 0;
-   qnProgress: number = 1;
-   
-   optionss: any;
-   usersCol: AngularFirestoreCollection<User>;
-   users: any;
-   userCol: AngularFirestoreCollection<User>;
-   use: any;
+   correctAnswerCount: number = 0;
+   qnProgress: number = 1;   
    correct: string = '';
    number2: number = 0;
 
@@ -52,6 +45,7 @@ export class QuizComponent implements OnInit {
   ngOnInit(){
   this.correctAnswerCount;
    this.correct;
+   //for getting data from the collection 'Question' in firestore
      this.questionsCol = this.afs.collection('Question');
     this.questions = this.questionsCol.snapshotChanges()
     .pipe(
@@ -63,38 +57,20 @@ export class QuizComponent implements OnInit {
             });
         })
     );   
-    this.usersCol = this.afs.collection('users/' + this.quizService.loggedInUser + "/clients/");
-    this.users = this.usersCol.snapshotChanges()
-    .pipe(
-        map(actions => {
-            return actions.map(a => {
-                const data = a.payload.doc.data() as User;
-                const id = a.payload.doc.id;
-                return{id, data};
-               
-            });
-        })
-    );
-    this.userCol = this.afs.collection('users');
-    this.use = this.usersCol.get().toPromise()
-    .then(function(querySnapshot) {
-      querySnapshot.forEach(function(doc) {
-        // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
-    });
-  });
-    this.optionss = this.question.Option;
- }
+   
+    
+  }
 
- restart() {
-  location.reload(true);
-    }
+
+//for restarting the quiz game which reload to the msin page
+ restart() 
+ {
+   location.reload(true);
+ }
  
 
- close(){
-  localStorage.setItem('correctAnswerCount', "0");
- }
-
+ 
+//this method create a client inside users collection and store score of the user by the 'Score'
  submitanswer(){ 
   this.afs.collection('users')
   .doc(this.quizService.loggedInUser)

@@ -10,7 +10,7 @@
                 <a  class="nav-link" (click)="Restart()">Homepage</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link item"   routerLinkActive="active">Aboutpage</a>
+              <a class="nav-link item" (click)="Aboutpage()"   routerLinkActive="active">Aboutpage</a>
             </li>
             <li class="nav-item">
               <!-- Can we make this work? -->
@@ -23,7 +23,7 @@
                 <a  class="nav-link item" (click)="Restart()">Homepage</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link item"   routerLinkActive="active">Aboutpage</a>
+                <a class="nav-link item" (click)="Aboutpage()"  routerLinkActive="active">Aboutpage</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link item"  (click)="quizService.SignOut()">Signout</a> 

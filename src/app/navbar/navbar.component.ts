@@ -28,5 +28,8 @@ export class NavbarComponent implements OnInit {
   Homepage(){
     this.router.navigate(['']);
   }
+  Aboutpage(){
+    this.router.navigate(['/about']);
+  }
 
 }

@@ -33,3 +33,14 @@
     display: flex;
     justify-content: space-around;
 }
+
+.r_img{
+    width: 200px;
+    margin: auto;
+}
+
+.r_centerimg {
+    margin: auto;
+    width: 150px;
+
+}

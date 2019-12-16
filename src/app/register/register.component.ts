@@ -19,40 +19,34 @@ import { BehaviorSubject } from 'rxjs';
 export class RegisterComponent implements OnInit {
   
   form: FormGroup;
-  
-  naame: string = 'harman';
-  title: string;
   invalidLoginMessage;
   private loggedIn = new BehaviorSubject<boolean>(false);
   loggedInUser;
-  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
-
+ 
   constructor(fb: FormBuilder,
     private quizService : QuizService,
     private route : Router,
     private afs: AngularFirestore,
-     private _route:ActivatedRoute ,
-     private afAuth: AngularFireAuth) 
+    private _route:ActivatedRoute ,
+    private afAuth: AngularFireAuth) 
   {
-    this.form = fb.group({
-      Name:[``]  
-          
-  })
-   }
+    this.form = fb.group({Name:[``] })
+  }
   
   ngOnInit(){
-       this.title = "New User";
-       this.naame = this.form.controls['Name'].value;
+       
 
 }
+//this method will send form by 'Name' to the signup method in quizservice 
 onSignup(){
   var result = this.quizService.signup(
       this.form.controls['Name'].value); 
-}
+    }
+
+//this method will send form by 'Name' to the login method in quizservice 
 login(){
   var result = this.quizService.login(
-    this.form.controls['Name'].value);
-   
-}
+    this.form.controls['Name'].value);  
+        }
   
   }
