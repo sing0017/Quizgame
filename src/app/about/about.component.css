@@ -1,6 +1,6 @@
 #a_background {
 
-    background: url(https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/imagge%2Fdarkened_background.jpg?alt=media&token=7131227a-3562-43a3-b979-072515a06af7) center no-repeat;
+    background: url(src\assets\img\darkened_background.jpg) center no-repeat;
     background-size: cover;
     height: 100vh;
     width: 100%;
@@ -41,7 +41,7 @@ margin-right: 80px;
 }
 
 .a_img {
-    background: url(https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/imagge%2Fsustain.jpg?alt=media&token=7b849999-ab4f-4e9d-ae98-54abc003c139) no-repeat center;
+    background: url(src\assets\img\sustain.jpg) no-repeat center;
     background-size: cover;
     grid-column: 2;
     margin-right: 80px;
