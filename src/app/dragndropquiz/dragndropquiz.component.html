@@ -23,7 +23,7 @@
   <div class="example-container1">
     <div class="example-container2">
       <div class="Question1">
-          <h6>Food</h6>
+          <div class="heading">Food</div>
           <div style="float: left; width: 200px; padding: -20px 0px;"
              cdkDropList #h1 = "cdkDropList"
             cdk-drag-animating
@@ -31,40 +31,40 @@
              class="example-list"
             (cdkDropListDropped)="drop($event , 1)"
              >
-            <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/foodtrash.png?alt=media&token=92d9b6aa-500b-415b-8dac-6af796e9aeaf" style="height: 150px; width: 200px;">   
+            <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/foodtrash.png?alt=media&token=92d9b6aa-500b-415b-8dac-6af796e9aeaf"  >   
         </div>
       </div>
-   <div class="Question2">
-      <h6>Metal</h6>
+   <div class="Question1">
+      <div class="heading">Metal</div>
       <div style="float: left; width: 200px; padding:-20px 0px;"
          cdkDropList #h3 = "cdkDropList"
         [cdkDropListData]="even1"
          class="example-list2"
         (cdkDropListDropped)="drop($event , 2)"
         >
-        <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/metaltrash.png?alt=media&token=e6ec50d0-4db5-4007-94d7-df6b5c236874" style="height: 150px; width: 200px;">
+        <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/metaltrash.png?alt=media&token=e6ec50d0-4db5-4007-94d7-df6b5c236874"  >
       </div> 
    </div>
-   <div class="Question3">
-      <h6>Paper</h6>
+   <div class="Question1">
+      <div class="heading">Paper</div>
       <div style="float: left; width: 200px;"
          cdkDropList #h4 = "cdkDropList"
          [cdkDropListData]="even1"
          class="example-list3"
         (cdkDropListDropped)="drop($event , 3)"
          >
-        <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/papirtrash.png?alt=media&token=0ed4a392-4e87-46c2-9f21-839a5931f422" style="height: 150px; width: 200px;">   
+        <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/papirtrash.png?alt=media&token=0ed4a392-4e87-46c2-9f21-839a5931f422"  >   
     </div>
    </div>
-<div class="Question4">
-    <h6>Plastic</h6>
+<div class="Question1">
+    <div class="heading">Plastic</div>
     <div style="float: left; width: 200px; padding: -20px 0px;"
        cdkDropList #h5 = "cdkDropList"
        [cdkDropListData]="even1"
        class="example-list4"
       (cdkDropListDropped)="drop($event , 4)"
        >
-      <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/plasttrash.png?alt=media&token=9b1e5d2c-f30a-4df5-b3a4-3e2042c629a2" style="height: 150px; width: 200px;">   
+      <img src="https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/plasttrash.png?alt=media&token=9b1e5d2c-f30a-4df5-b3a4-3e2042c629a2"  >   
     </div>
 </div>
 </div>
@@ -72,7 +72,7 @@
 <div class="example-container" cdkDropListGroup>
    <ng-container  *ngFor="let options of drag | async "> 
   <div
-     cdkDropList #h2 = "cdkDropList"
+      cdkDropList #h2 = "cdkDropList"
     [cdkDropListData]="options.data.Option"
     [cdkDropListConnectedTo]="[h1,h3,h4,h5]"
     class="example-list1"
@@ -82,7 +82,7 @@
       *ngFor="let number of options.data.Option "
       [cdkDragData]="number"
        cdkDrag #h1 = "cdkDrag">  
-      <img src="{{number}}" style="height: 100px; width: 100px; padding: -20px 0px; ">
+      <img src="{{number}}" style="height: 100px; width: 100px;">
     </div>
   </div>
   </ng-container>

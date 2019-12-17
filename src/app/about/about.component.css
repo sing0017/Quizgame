@@ -2,7 +2,7 @@
 
     background: url(https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/imagge%2Fdarkened_background.jpg?alt=media&token=7131227a-3562-43a3-b979-072515a06af7) center no-repeat;
     background-size: cover;
-    height: 700px;
+    height: 100vh;
     width: 100%;
 }
 

@@ -1,7 +1,7 @@
 .r_background {
     background: url(src\assets\img\darkened_background.jpg) no-repeat center;
     background-size: cover;
-    height: 700px;
+    height: 100vh;
     width: 100%;
     padding-top: 200px;
 }

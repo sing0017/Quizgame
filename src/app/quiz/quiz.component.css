@@ -17,7 +17,7 @@ li[tabindex]:focus {
 .quiz{
     width: 100%;
     background-image: url("https://firebasestorage.googleapis.com/v0/b/myfinalproject-e3283.appspot.com/o/darkened_background.jpg?alt=media&token=0352e33c-75b4-42a2-934f-979277915860");
-    height: 700px;
+    height: 100vh;
     margin: auto;
  }
  .answers{
@@ -78,7 +78,7 @@ li[tabindex]:focus {
     margin-bottom: 0.67em;
     margin-left: 0;
     margin-right: 0;
-    font-weight: bold;
+    font-weight: bold; 
     color: white;
     text-transform: uppercase;
     text-align: center;

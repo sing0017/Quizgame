@@ -1,67 +1,84 @@
- 
- .mainbody{
+.mainbody{
   background: url(src\assets\img\darkened_background.jpg) no-repeat center;
   background-size: cover;
-  height:  700px;
-   
+  height:  100vh;
  }
 
 .example-container ::after {
   content: "";
   clear: both;
   display: table;
-  margin: 0px 220px;
-  background-color: rgba(255, 255, 255, 0.65);
+   background-color: rgba(255, 255, 255, 0.65);
 
 }
+
+.heading{
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  text-align: center !important;
+}
+
   .btn {
     background-color: #801c1c;
     color: white;
     border-color: #801c1c;
-    margin-left: 65px;
+    margin: 0 20px;
+}
+
+.example-container{
+  display: flex;
+  justify-content: center;
 }
    .example-container2{
-     height: 300px;
-     width: auto;
-     padding: 40px 0px;
+     height: 400px;
+     width: 70%;
+     margin: auto;
+     padding: 40px;
+     display: flex;
+     justify-content: space-around;
    }
   
   .example-box  {
     float: left;
     width: 10%;
     margin: 0px 20px;
+    opacity: 1.0;
+
+
+  }
+  .example-list1{
+    width: 1050px;
+    background-color: rgba(255,255,255,0.65);
+    border-radius: 5px;
   }
   .Question1{
-    height: 200px;
-    width: 200px;
+    height: auto;
+    width: auto;
     float: left;
-    padding: 20px 150px;
+    background-color: rgba(255,255,255,0.65);
+    text-align: center;
+    border-radius: 5px;
+    padding: 45px 15px 50px 15px;
   }
-  .Question2{
-    height: 200px;
-    width: 200px;
-    float: left;
-    padding: 20px 150px;
+  .Question1:hover{
+    background-color: rgba(255,255,255,1);
+    color: white;
+  }
+  .img{
+    height: 150px;
+     width: 200px;
+  }
+  .card-action5{
+    margin: auto;
+    height: auto !important;
+    text-align: center;
+  }
 
-  }
-  .Question3{
-    height: 200px;
-    width: 200px;
-    float: left;
-    padding: 20px 150px;
-
-  }
-  .Question4{
-    height: 200px;
-    width: 200px;
-    float: left;
-    padding: 20px 150px;
-   }
   h6{
     font-size: 2em;
    margin-top: 0.67em;
    margin-bottom: 0.67em;
-   padding-left: 50px;
    font-weight: bold;
    color: white;    
   }
@@ -74,8 +91,8 @@
   padding: 30px 0;
   position: absolute;
   color: #ffffff;
-  top: 40%;
-  left: 15%;
+  top: 240%;
+  left: 17%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
@@ -91,8 +108,8 @@
   border-radius: 5px;
   padding: 30px 0;
   position: absolute;
-  top: 40%;
-  left: 15%;
+  top: 240%;
+  left: 17%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
@@ -133,4 +150,3 @@
   .cdk-drop-list-dragging .cdk-drag {
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
   }
-  
