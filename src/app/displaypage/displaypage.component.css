@@ -73,7 +73,8 @@ width: 100%;
     color: white;
 }
 
-.modal_back {
+ 
+.tab-content{
     background: url(src\assets\img\darkened_background.jpg) no-repeat center;
     background-size: cover;
 }

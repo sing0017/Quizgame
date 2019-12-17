@@ -32,6 +32,7 @@ export class DragndropquizComponent implements OnInit {
   constructor(private afs: AngularFirestore , private quizService: QuizService, private router: Router) { }
 
   ngOnInit() {
+    
     //for getting list of option from the afs collection name 'Drag'
     this.dragCol = this.afs.collection('Drag');
     this.drag = this.dragCol.snapshotChanges()

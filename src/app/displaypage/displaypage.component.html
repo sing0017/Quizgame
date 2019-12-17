@@ -59,11 +59,16 @@
                   <div class="modal-body mb-1">
                 <form [formGroup]="form" (ngSubmit)="login()">
                         <div class="form-group">
-                                <label for="Name"><h3>Email</h3></label>
+                                <label for="Name"><h3>Enter Username</h3></label>
                                 <input  type="text" class="form-control" formControlName="Name"> 
-                               
                               </div>
-       
+                              <div *ngIf="form.controls.Name.touched && 
+                              !form.controls.Name.valid" class="alert alert-danger">
+                              Username is Required
+                          </div>
+                              <div *ngIf= "quizservice.errormessage1" class="alert alert-danger" >
+                                {{quizservice.errormessage1}}
+                            </div>
                        <button  class="btn btn-info" type="submit">Log in <i class="fas fa-sign-in ml-1"></i></button>
                  </form>
               </div>
@@ -87,11 +92,16 @@
                       <div class="form-group">
                             <form [formGroup]="form" (ngSubmit)="onSignup()">
                                     <div class="form-group">
-                                            <label for="Name"><h3>Create Email</h3></label>
+                                            <label for="Name"><h3>Create Username</h3></label>
                                             <input  type="text" class="form-control" formControlName="Name"> 
-                                       
                                           </div>
-          
+                                          <div *ngIf="form.controls.Name.touched && 
+                                          !form.controls.Name.valid" class="alert alert-danger">
+                                          Username is Required
+                                      </div>
+                                          <div *ngIf= "quizservice.errormessage" class="alert alert-danger" >
+                                            {{quizservice.errormessage}}
+                                        </div>
                            <button class="btn btn-info" type="submit">Sign up <i class="fas fa-sign-in ml-1"></i></button>
                              </form>
                       </div>

@@ -17,6 +17,9 @@ export class QuizService {
   number2: number = 0;
   questions: Observable<Question[]>;
   quizcomponent: any;
+  errormessage: string;
+  errormessage1: string;
+
 
   constructor( private router:Router,
     private afAuth: AngularFireAuth , 
@@ -59,8 +62,9 @@ export class QuizService {
         )
         .catch(
           error => {
-              var errorMessage = error.message;
-              console.log(error);                
+              this.errormessage = error.message;
+              //this.router.navigate([' /' + error.message]);
+              console.log(error.message);                
           }
       ); 
           }
@@ -102,8 +106,9 @@ export class QuizService {
                         location.reload(true);                 
                     })
                     .catch(
-                        error => {                    
-                            this.router.navigate(['login/' + error.message]);
+                        error => {   
+                          this.errormessage1 = error.message;
+                          //this.router.navigate(['login/' + error.message]);
                             console.log(error);                
                         }                                          
                     );    

@@ -9,7 +9,7 @@ import { AboutComponent } from './about/about.component';
 
 export const appRoutes : Routes =[
   {path:'',component:DisplaypageComponent   },
-    {path:'register',component:RegisterComponent},
+     {path:'register',component:RegisterComponent},
     {path:'quiz',component:QuizComponent, canActivate : [AuthGuard]  },
       {path:'drag',component:DragndropquizComponent , canActivate : [AuthGuard]  },
       {path:'result',component:ResultComponent, canActivate : [AuthGuard]  },

@@ -1,13 +1,13 @@
 <app-navbar></app-navbar>
 <div class="mainbody">
 <div class="modal-body" >
-     <ng-container  *ngIf="correct=='InCorrect'"> 
-     <img src="https://craigmcneil.me/wp-content/uploads/2017/02/wrong.jpg" style="height: 50px; width: 100px;">
-    </ng-container>
+     <div class="wrong"   *ngIf="correct=='InCorrect'"> 
+      Wrong, nice try!
+    </div>
      <br>
-     <ng-container  *ngIf="correct=='Correct'"> 
-      <img src="https://media.istockphoto.com/vectors/grunge-green-correct-square-rubber-seal-stamp-on-white-background-vector-id959944312" style="height: 50px; width: 100px;">
-     </ng-container>
+     <div class="right"    *ngIf="correct=='Correct'"> 
+      Correct, nice job!
+      </div>
 </div>
 <div class="card-action5">
     <div class="modal-body1" >
