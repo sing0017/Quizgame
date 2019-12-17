@@ -1,7 +1,7 @@
 .mainbody{
   background: url(src\assets\img\darkened_background.jpg) no-repeat center;
   background-size: cover;
-  height:  100vh;
+  height:  100%;
  }
 
 .example-container ::after {
@@ -26,6 +26,14 @@
     margin: 0 20px;
 }
 
+.instruction{
+  text-align: center;
+    font-size: 18px;
+    margin-top: 25px;
+    color: white;
+  
+}
+
 .example-container{
   display: flex;
   justify-content: center;
@@ -44,9 +52,8 @@
     width: 10%;
     margin: 0px 20px;
     opacity: 1.0;
-
-
   }
+   
   .example-list1{
     width: 1050px;
     background-color: rgba(255,255,255,0.65);
@@ -73,6 +80,9 @@
     margin: auto;
     height: auto !important;
     text-align: center;
+  }
+  .card-action1{
+    padding-bottom: 50px;
   }
 
   h6{
