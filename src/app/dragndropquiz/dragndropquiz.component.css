@@ -28,10 +28,12 @@
 
 .instruction{
   text-align: center;
-    font-size: 18px;
+    font-size: 2em;
     margin-top: 25px;
     color: white;
-  
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #801c1c;
 }
 
 .example-container{
