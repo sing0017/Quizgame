@@ -12,6 +12,22 @@ height: 100%;
 width: 100%;
 }
 
+#d_close {
+    background-color: white;
+    color: #282828;
+}
+
+#navtab {
+    color: #282828;
+}
+
+.nav-item{
+    background-color: white;
+
+}
+
+
+
 #split1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -74,8 +90,8 @@ width: 100%;
 }
 
  
-.tab-content{
-    background: url(src\assets\img\darkened_backgroundsmall.jpg) no-repeat center;
+.modal-c-tabs{
+    background:  #2d2d30;
     background-size: cover;
 }
 

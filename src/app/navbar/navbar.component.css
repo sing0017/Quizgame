@@ -4,10 +4,11 @@
   font-size: 12px ;
   letter-spacing: 5px;
   height: 80px; 
+  width: 100%;
   background-color: #2d2d30;
   border: black solid 1px;
   opacity: 0.9;
- 
+  
  }
  .navbar-default .navbar-nav>li>a {
   color: #fff;

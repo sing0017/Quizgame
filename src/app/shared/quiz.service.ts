@@ -107,7 +107,7 @@ export class QuizService {
                     })
                     .catch(
                         error => {   
-                          this.errormessage1 = error.message;
+                          this.errormessage1 = "This user is not registered. Create new one.";
                           //this.router.navigate(['login/' + error.message]);
                             console.log(error);                
                         }                                          

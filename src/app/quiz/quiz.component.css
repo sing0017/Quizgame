@@ -64,6 +64,7 @@ li[tabindex]:focus {
     text-align: center;
     font-size: 20px;
     margin: 0 10px; 
+    font-weight: bold;
    }
 
    .answer:hover{

@@ -18,7 +18,7 @@
     display: flex;
     justify-content: center;
     width: fit-content;
-    padding: 25px 25px;
+    padding: 40px 40px;
     margin: auto;
     border-radius: 10px;
 }
@@ -40,7 +40,7 @@
 }
 
 .r_centerimg {
-    margin: auto;
     width: 150px;
+    margin: auto 50px;
 
 }

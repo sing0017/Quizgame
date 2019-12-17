@@ -40,11 +40,11 @@
               <!-- Nav tabs -->
               <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
+                  <a class="nav-link" id="navtab" data-toggle="tab" href="#panel7" role="tab">
                     Login</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+                  <a class="nav-link" id="navtab" data-toggle="tab" href="#panel8" role="tab">
                     Register</a>
                 </li>
               </ul>
@@ -69,7 +69,7 @@
                               <div *ngIf= "quizservice.errormessage1" class="alert alert-danger" >
                                 {{quizservice.errormessage1}}
                             </div>
-                       <button  class="btn btn-info" type="submit">Log in <i class="fas fa-sign-in ml-1"></i></button>
+                       <button  class="btn btn-info" type="submit">Log in</button>
                  </form>
               </div>
 
@@ -77,7 +77,7 @@
                   <!--Footer-->
                   <div class="modal-footer">
                   
-                    <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-info waves-effect ml-auto" id="d_close" data-dismiss="modal">Close</button>
                   </div>
       
                 </div>
@@ -102,7 +102,7 @@
                                           <div *ngIf= "quizservice.errormessage" class="alert alert-danger" >
                                             {{quizservice.errormessage}}
                                         </div>
-                           <button class="btn btn-info" type="submit">Sign up <i class="fas fa-sign-in ml-1"></i></button>
+                           <button class="btn btn-info" type="submit">Sign up </button>
                              </form>
                       </div>
                        
@@ -112,7 +112,7 @@
                   <!--Footer-->
                   <div class="modal-footer">
                   
-                        <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-outline-info waves-effect ml-auto" id="d_close" data-dismiss="modal">Close</button>
                       </div>
                 </div>
                 <!--/.Panel 8-->
