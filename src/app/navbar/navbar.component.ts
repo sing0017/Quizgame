@@ -17,8 +17,8 @@ export class NavbarComponent implements OnInit {
   }
 
   Restart(){
-    location.reload(true);
-  }
+location.reload(true); 
+ }
   DragnDrop(){
     this.router.navigate(['/drag']);
   }
@@ -26,9 +26,11 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/quiz']);
   }
   Homepage(){
-    this.router.navigate(['']);
+    
+    this.router.navigate(['']);  
   }
   Aboutpage(){
+     
     this.router.navigate(['/about']);
   }
 

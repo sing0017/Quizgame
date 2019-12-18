@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
   }
   
   ngOnInit(){
-       
+  
 
 }
 //this method will send form by 'Name' to the signup method in quizservice 

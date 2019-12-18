@@ -10,6 +10,7 @@ import {Question} from './question';
 export class QuizService {
   
   private loggedIn = new BehaviorSubject<boolean>(false);
+ 
   loggedInUser;
   loggedInUsername: string;
   loggedInUserdname: string = 'harman';
@@ -35,7 +36,7 @@ export class QuizService {
   correctAnswerCount: number = 0;
   password: string = '123456';
   usernamme: string = '';
-
+ 
 
   get isLoggedIn(){
     return this.loggedIn.asObservable();  
@@ -78,8 +79,10 @@ export class QuizService {
                     this.loggedIn.next(true); 
                     this.numnber = 1;   
                     this.loggedInUser=authState.uid;    
-                    this.loggedInUsername = authState.email.charAt(0).toUpperCase() + authState.email.slice(1 , -10);   
-                    this.router.navigate(['/']);                     
+                    this.loggedInUsername = authState.email.charAt(0).toUpperCase() + authState.email.slice(1 , -10); 
+                  
+                       this.router.navigate(['']);                     
+                    
                     console.log("logged in as " + authState.uid);
                    
                 } 
@@ -89,7 +92,8 @@ export class QuizService {
               });           
           } 
          
-           
+               
+            
         
   //For login the user if he/she already a user   
   login(username  , password: string = '123456'){       
@@ -167,9 +171,9 @@ export class QuizService {
               
               this.qnProgress++;
               if (this.qnProgress == 6) {
-
-                  this.router.navigate(['result']);
-              }
+                   this.router.navigate(['result']);
+                   
+                  }
              
             }
          

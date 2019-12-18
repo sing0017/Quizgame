@@ -32,8 +32,7 @@ export class DragndropquizComponent implements OnInit {
   constructor(private afs: AngularFirestore , private quizService: QuizService, private router: Router) { }
 
   ngOnInit() {
-    
-    //for getting list of option from the afs collection name 'Drag'
+     //for getting list of option from the afs collection name 'Drag'
     this.dragCol = this.afs.collection('Drag');
     this.drag = this.dragCol.snapshotChanges()
     .pipe(
@@ -92,8 +91,26 @@ export class DragndropquizComponent implements OnInit {
     }
     
  restart() {
-  location.reload(true); 
-}
+   this.correctAnswerCountfordrag100 = 0;
+   this.correct = '';
+   this.incorrect = '';
+   this.dragCol = this.afs.collection('Drag');
+   this.drag = this.dragCol.snapshotChanges()
+   .pipe(
+       map(actions => {
+           return actions.map(a => {
+               const data = a.payload.doc.data() as Drag;
+               const id = a.payload.doc.id;
+               return{id, data};
+
+           });
+       })
+   ); 
+this.router.navigate(['drag']);
+ //this.router.navigate(['drag']);
+
+ }
+ 
 correctness(){
   this.correctAnswerCountfordrag++ ;
   this.correctAnswerCountfordrag100 = this.correctAnswerCountfordrag * 100;

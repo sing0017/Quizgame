@@ -7,7 +7,7 @@
       <ul class="navbar-nav">
         <ng-container *ngIf="quizService.numnber==0;">
             <li class="nav-item item">
-                <a  class="nav-link" (click)="Restart()">Homepage</a>
+                <a  class="nav-link" (click)="Homepage()">Homepage</a>
             </li>
             <li class="nav-item">
               <a class="nav-link item" (click)="Aboutpage()"   routerLinkActive="active">About</a>
@@ -20,7 +20,7 @@
 
         <ng-container *ngIf="quizService.numnber==1;">
             <li class="nav-item">
-                <a  class="nav-link item" (click)="Restart()">Homepage</a>
+                <a  class="nav-link item" (click)="Homepage()">Homepage</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link item" (click)="Aboutpage()"  routerLinkActive="active">About</a>

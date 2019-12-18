@@ -21,7 +21,7 @@ export class DisplaypageComponent  {
    }
   
    ngOnInit(){
-    this._route.params.subscribe(params => {
+      this._route.params.subscribe(params => {
       this.invalidLoginMessage = params["invalidLoginMessage"];
       console.log(this.invalidLoginMessage);
   });

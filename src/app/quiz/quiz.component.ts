@@ -43,7 +43,13 @@ export class QuizComponent implements OnInit {
 
   
   ngOnInit(){
-  this.correctAnswerCount;
+
+    this.quizService.qnProgress = 1 ;
+    this.quizService.correctAnswerCount = 0;
+    this.quizService.correct = '';
+    this.quizService.correct1 = '';
+
+   this.correctAnswerCount;
    this.correct;
    //for getting data from the collection 'Question' in firestore
      this.questionsCol = this.afs.collection('Question');
@@ -64,9 +70,9 @@ export class QuizComponent implements OnInit {
 
 //for restarting the quiz game which reload to the msin page
  restart() 
- {
-   location.reload(true);
- }
+ { 
+ this.router.navigate(['quiz']); 
+}
  
 
  
