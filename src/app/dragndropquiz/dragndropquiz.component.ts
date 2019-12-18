@@ -92,6 +92,8 @@ export class DragndropquizComponent implements OnInit {
     
  restart() {
    this.correctAnswerCountfordrag100 = 0;
+   this.correctAnswerCountfordrag = 0;
+
    this.correct = '';
    this.incorrect = '';
    this.dragCol = this.afs.collection('Drag');
