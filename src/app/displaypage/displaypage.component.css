@@ -91,12 +91,12 @@ width: 100%;
 
  
 .modal-c-tabs{
-    background:  #2d2d30;
+    background: url(src\assets\img\darkened_backgroundsmall.jpg) no-repeat center;
     background-size: cover;
 }
 
 #modal_main {
-    background-color: #282828;
+    background: url(src\assets\img\darkened_backgroundsmall.jpg) no-repeat center;
     color: white;
 }
 
@@ -104,5 +104,6 @@ width: 100%;
     background-color: #801c1c;
     border-color: #801c1c;
 }
+ 
 
 

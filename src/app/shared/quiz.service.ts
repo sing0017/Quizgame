@@ -113,6 +113,22 @@ export class QuizService {
                         error => {   
                           this.errormessage1 = "This user is not registered. Create new one.";
                           //this.router.navigate(['login/' + error.message]);
+                          if(this.errormessage1 = 'This user is not registered. Create new one.')
+                         {
+                          return this.afAuth.auth.createUserWithEmailAndPassword(this.usernamme, password)    
+                          .then( 
+                              authState => {
+                                  console.log("signup-then", authState);  
+                                  this.loggedIn.next(true); 
+                                  this.numnber = 1;   
+                                  this.loggedInUser = authState.user.uid;
+                                  this.loggedInUsername = authState.user.email;  
+                                  this.loggedInUserdname = authState.user.displayName;                             
+                                   location.reload(true);                 
+                                  console.log(authState.user.displayName);
+                              }
+                          )
+                         }
                             console.log(error);                
                         }                                          
                     );    
